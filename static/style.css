@@ -164,6 +164,7 @@ a { color: var(--color-link); }
 .support-table td.support-no,
 .support-table td.support-unknown {
   color: #000;
+  text-align: center;
 }
 .support-table td.support-yes {
   background: #a8d5a2;
