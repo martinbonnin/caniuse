@@ -11,12 +11,27 @@
     "one-of": {
       "since": "16.9.0"
     },
-    "capabilities": null,
+    "capabilities": {
+      "since": "?",
+      "note": "[open PR](https://github.com/graphql/graphql-js/pull/4523)"
+    },
     "deprecated-objects": null,
-    "directives-on-directives": null,
-    "executable-documents-descriptions": null,
-    "fragment-arguments": null,
-    "on-error": null,
+    "directives-on-directives": {
+      "since": "?",
+      "note": "[open PR](https://github.com/graphql/graphql-js/pull/4521)"
+    },
+    "executable-documents-descriptions": {
+      "since": "16.12.0",
+      "note": "[PR](https://github.com/graphql/graphql-js/pull/4482)"
+    },
+    "fragment-arguments": {
+      "since": "17.0.0-alpha.8",
+      "note": "[PR](https://github.com/graphql/graphql-js/pull/4015)"
+    },
+    "on-error": {
+      "since": "?",
+      "note": "[open PR](https://github.com/graphql/graphql-js/pull/4364)"
+    },
     "semantic-introspection": null,
     "semantic-non-null": null
   }
