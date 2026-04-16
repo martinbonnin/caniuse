@@ -36,7 +36,9 @@ internal fun generatePage(pathPrefix: String = "", content: MAIN.() -> Unit): St
     head {
       title("Can I Use ... in GraphQL?")
       link(rel = "icon", type = "image/svg+xml", href = "${pathPrefix}caniuse.svg")
+      link(rel = "stylesheet", href = "${pathPrefix}pagefind/pagefind-ui.css")
       link(rel = "stylesheet", href = "${pathPrefix}style.css")
+      script(src = "${pathPrefix}pagefind/pagefind-ui.js", type = "text/javascript") {}
       script(src = "${pathPrefix}theme.js") {}
     }
     body {
@@ -51,6 +53,9 @@ internal fun generatePage(pathPrefix: String = "", content: MAIN.() -> Unit): St
         }
         div {
           id = "header-actions"
+          div {
+            id = "search"
+          }
           a(href = "https://github.com/$repo") {
             attributes["aria-label"] = "GitHub"
             attributes["title"] = "GitHub"
@@ -86,6 +91,72 @@ internal fun generatePage(pathPrefix: String = "", content: MAIN.() -> Unit): St
       }
       main {
         content()
+      }
+      script {
+        unsafe {
+          +"""
+            window.addEventListener('DOMContentLoaded', function() {
+              new PagefindUI({
+                element: "#search",
+                showSubResults: true,
+                showImages: false
+              });
+
+              var input = document.querySelector('#search .pagefind-ui__search-input');
+              if (!input) return;
+
+              // Add keyboard shortcut hint
+              var kbd = document.createElement('kbd');
+              kbd.id = 'search-kbd';
+              kbd.innerHTML = navigator.userAgent.includes('Mac')
+                ? '<span class="kbd-symbol">&#8984;</span>K'
+                : 'CTRL K';
+              input.parentNode.style.position = 'relative';
+              input.parentNode.appendChild(kbd);
+
+              // Show/hide kbd on focus
+              input.addEventListener('focus', function() { kbd.style.display = 'none'; });
+              input.addEventListener('blur', function() {
+                if (!input.value) kbd.style.display = '';
+              });
+
+              // Arrow key navigation through results
+              function getResultLinks() {
+                return Array.from(document.querySelectorAll('#search .pagefind-ui__result-link'));
+              }
+              input.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowDown') {
+                  var links = getResultLinks();
+                  if (links.length) { e.preventDefault(); e.stopPropagation(); links[0].focus(); }
+                }
+              });
+              document.querySelector('#search').addEventListener('keydown', function(e) {
+                if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp' && e.key !== 'Escape') return;
+                var links = getResultLinks();
+                var idx = links.indexOf(document.activeElement);
+                if (idx === -1) return;
+                e.preventDefault();
+                if (e.key === 'ArrowDown' && idx < links.length - 1) {
+                  links[idx + 1].focus();
+                } else if (e.key === 'ArrowUp') {
+                  if (idx === 0) { input.focus(); } else { links[idx - 1].focus(); }
+                } else if (e.key === 'Escape') {
+                  input.focus();
+                }
+              });
+
+              // Keyboard shortcut: Cmd+K / Ctrl+K or /
+              window.addEventListener('keydown', function(e) {
+                var tag = (document.activeElement || {}).tagName;
+                if (tag && ['INPUT','SELECT','BUTTON','TEXTAREA'].indexOf(tag) !== -1) return;
+                if (e.key === '/' || (e.key === 'k' && (e.metaKey || e.ctrlKey))) {
+                  e.preventDefault();
+                  input.focus({ preventScroll: true });
+                }
+              });
+            });
+          """.trimIndent()
+        }
       }
       footer {
         div {

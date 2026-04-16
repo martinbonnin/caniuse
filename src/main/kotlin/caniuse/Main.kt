@@ -21,8 +21,6 @@ fun main(args: Array<String>) {
             it.nameWithoutExtension to json.decodeFromString<Feature>(it.readText())
         }
 
-
-    File("static").copyRecursively(outputDir, overwrite = true)
     outputDir.resolve("index.html").writeText(generateIndex(projects, features))
 
     val projectDir = outputDir.resolve("project")

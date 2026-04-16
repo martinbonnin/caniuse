@@ -14,11 +14,27 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
-tasks.register("buildWebsite", JavaExec::class.java) {
+val generateHtml = tasks.register("generateHtml", JavaExec::class.java) {
     classpath(kotlin.target.compilations.getByName("main").output.classesDirs)
     classpath(configurations.named("runtimeClasspath"))
     mainClass.set("caniuse.MainKt")
-
-    inputs.files(fileTree("static")).withPathSensitivity(PathSensitivity.RELATIVE).withPropertyName("static")
     inputs.files(fileTree("data")).withPathSensitivity(PathSensitivity.RELATIVE).withPropertyName("data")
+}
+
+val copyStaticData = tasks.register("copyStaticData", Copy::class.java) {
+    from("static")
+    into("build/site/")
+}
+
+val generatePageFind = tasks.register("generatePageFind", Exec::class.java) {
+    dependsOn(generateHtml)
+    commandLine("npx", "pagefind", "--site", "build/site")
+}
+
+tasks.register("buildSite") {
+    dependsOn(generateHtml, copyStaticData)
+}
+
+tasks.register("buildSiteAndPageFind") {
+    dependsOn(generatePageFind, copyStaticData)
 }
