@@ -68,7 +68,7 @@ Then add support entries for this feature in the relevant project files.
 ## Building the site locally
 
 ```bash
-./gradlew buildWebsite
+./gradlew buildSite
 ```
 
 The generated site is in `build/site/`.

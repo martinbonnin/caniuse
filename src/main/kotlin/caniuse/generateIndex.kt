@@ -7,7 +7,7 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
     div {
       h1 { +"Can I use ... in GraphQL ?" }
       p {
-        +"A directory of (mostly) experimental GraphQL features and the state of their support accross different projects."
+        +"A directory of GraphQL features, both drafted and experimental, and the state of their support accross different projects."
       }
       p {
         +"The data for this website is open source ("
@@ -19,13 +19,6 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
           +"CONTRIBUTING.md"
         }
         + " for how to add a new project, feature, or to add an existing feature to an existing project."
-      }
-
-      p {
-        b {
-          +"Note:"
-        }
-        +" This website is still under construction and data is still **very** incomplete."
       }
     }
     div {

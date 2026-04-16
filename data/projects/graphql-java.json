@@ -14,7 +14,10 @@
     "capabilities": null,
     "deprecated-objects": null,
     "directives-on-directives": null,
-    "executable-documents-descriptions": null,
+    "executable-documents-descriptions": {
+      "since": "-",
+      "note": "[issue](https://github.com/graphql-java/graphql-java/issues/4077)"
+    },
     "fragment-arguments": null,
     "on-error": null,
     "semantic-introspection": null,

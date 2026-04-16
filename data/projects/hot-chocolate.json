@@ -14,7 +14,10 @@
     "capabilities": null,
     "deprecated-objects": null,
     "directives-on-directives": null,
-    "executable-documents-descriptions": null,
+    "executable-documents-descriptions": {
+      "since": "16.0.0",
+      "note": "[pr](https://github.com/ChilliCream/graphql-platform/pull/8351)"
+    },
     "fragment-arguments": null,
     "on-error": null,
     "semantic-introspection": null,
