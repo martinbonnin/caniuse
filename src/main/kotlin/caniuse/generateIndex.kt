@@ -113,13 +113,13 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
     }
     p {
       classes = setOf("footnote")
-      +"* Because not all features make sense for all projects, and so as not to disadvantage projects with a narrower scope, the total score includes features that are not applicable. For an example, graphql-js is not concerned about "
+      +"* Because not all features make sense for all projects, and to be fair to projects with a narrower scope, the total score includes features that are not applicable. For an example, graphql-js is not concerned about "
       code {
         +"application/graphql-response+json"
       }
       +" but it still counts towards its global score."
       br
-      +"In each bar, the features that are not applicable, are displayed in a dimmed color."
+      +"In each bar, the features that are not applicable are displayed in a dimmed color."
     }
   }
 }

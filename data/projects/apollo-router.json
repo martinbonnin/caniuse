@@ -4,18 +4,37 @@
   "description": "A configurable, high-performance routing runtime for Apollo Federation",
   "url": "https://github.com/apollographql/router",
   "features": {
-    "capabilities": null,
-    "deprecated-objects": null,
-    "directives-on-directives": null,
-    "executable-documents-descriptions": null,
-    "fragment-arguments": null,
+    "capabilities": {
+      "since": "-"
+    },
+    "deprecated-objects": {
+      "since": "-"
+    },
+    "directives-on-directives": {
+      "since": "-"
+    },
+    "executable-documents-descriptions": {
+      "since": "-"
+    },
+    "fragment-arguments": {
+      "since": "-"
+    },
     "graphql-response+json": {
       "since": "-",
       "note": "[issue](https://github.com/apollographql/router/issues/6851)"
     },
-    "on-error": null,
-    "one-of": null,
-    "semantic-introspection": null,
-    "semantic-non-null": null
+    "on-error": {
+      "since": "-"
+    },
+    "one-of": {
+      "since": "-",
+      "note": "Requires support in apollo-rs ([pr](https://github.com/apollographql/apollo-rs/pull/1030))"
+    },
+    "semantic-introspection": {
+      "since": "-"
+    },
+    "semantic-non-null": {
+      "since": "-"
+    }
   }
 }
