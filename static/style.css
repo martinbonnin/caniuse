@@ -133,6 +133,11 @@ main {
 }
 a { color: var(--color-link); }
 
+/* Footnote */
+.footnote {
+  color: var(--color-muted);
+}
+
 /* Tags */
 h1 + .tag-experimental {
   margin-top: -2rem;
@@ -232,6 +237,13 @@ h1 + .tag-experimental {
   background: rgba(229, 53, 171, 0.5);
   transition: width 0.3s;
 }
+.feature-bar-fill-na {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: rgba(229, 53, 171, 0.25);
+  transition: width 0.3s, left 0.3s;
+}
 .feature-bar-label {
   position: relative;
   z-index: 1;
@@ -269,6 +281,13 @@ h1 + .tag-experimental {
   height: 100%;
   background: rgba(131, 189, 2, 0.5);
   transition: width 0.3s;
+}
+.project-bar-fill-na {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: rgba(131, 189, 2, 0.25);
+  transition: width 0.3s, left 0.3s;
 }
 .project-bar-label {
   position: relative;

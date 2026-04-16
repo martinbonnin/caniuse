@@ -33,17 +33,23 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
       div {
         h2 { +"Features" }
         p {
-          +"All features sorted by the number of projects that support them."
+          +"All features sorted by the number of projects that support them.*"
         }
 
         val maxScore = projects.size
         sortedFeatures(features, projects).forEach {
-          val percent = if (maxScore > 0) (it.score * 100) / maxScore else 0
+          val supportedPercent = if (maxScore > 0) (it.supported * 100) / maxScore else 0
+          val naPercent = if (maxScore > 0) (it.na * 100) / maxScore else 0
           a(href = "feature/${it.id}.html") {
             classes = setOf("feature-bar")
+            attributes["title"] = "${it.supported} supported, ${it.na} not applicable"
             div {
               classes = setOf("feature-bar-fill")
-              style = "width: ${percent}%"
+              style = "width: ${supportedPercent}%"
+            }
+            div {
+              classes = setOf("feature-bar-fill-na")
+              style = "left: ${supportedPercent}%; width: ${naPercent}%"
             }
             span {
               classes = setOf("feature-bar-label")
@@ -58,7 +64,7 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
             }
             span {
               classes = setOf("feature-bar-score")
-              +"${it.score} / $maxScore"
+              +"${it.total} / $maxScore"
             }
           }
         }
@@ -66,16 +72,22 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
       div {
         h2 { +"Projects" }
         p {
-          +"All projects sorted by the number of features they support."
+          +"All projects sorted by the number of features they support.*"
         }
         val maxFeatures = features.size
         sortedProjects(features, projects).forEach {
-          val percent = if (maxFeatures > 0) (it.score * 100) / maxFeatures else 0
+          val supportedPercent = if (maxFeatures > 0) (it.supported * 100) / maxFeatures else 0
+          val naPercent = if (maxFeatures > 0) (it.na * 100) / maxFeatures else 0
           a(href = "project/${it.id}.html") {
             classes = setOf("project-bar")
+            attributes["title"] = "${it.supported} supported, ${it.na} not applicable"
             div {
               classes = setOf("project-bar-fill")
-              style = "width: ${percent}%"
+              style = "width: ${supportedPercent}%"
+            }
+            div {
+              classes = setOf("project-bar-fill-na")
+              style = "left: ${supportedPercent}%; width: ${naPercent}%"
             }
             span {
               classes = setOf("project-bar-label")
@@ -83,18 +95,21 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
             }
             span {
               classes = setOf("project-bar-score")
-              +"${it.score} / $maxFeatures"
+              +"${it.total} / $maxFeatures"
             }
           }
         }
       }
     }
     p {
-      +"Features that make no sense for a given project are considered compatible. For an example, for this chart, graphql-js is considered as supporting "
+      classes = setOf("footnote")
+      +"* Because not all features make sense for all projects, and so as not to disadvantage projects with a narrower scope, the total score includes features that are not applicable. For an example, graphql-js is not concerned about "
       code {
         +"application/graphql-response+json"
       }
-      +" although it technically doesn't make sense because graphql-js is transport agnostic."
+      +" but it still counts towards its global score."
+      br
+      +"In each bar, the features that are not applicable, are displayed in a dimmed color."
     }
   }
 }
@@ -102,15 +117,21 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
 private class DisplayProject(
   val id: String,
   val name: String,
-  val score: Int
-)
+  val supported: Int,
+  val na: Int
+) {
+  val total = supported + na
+}
 
 private class DisplayFeature(
   val id: String,
   val name: String,
-  val score: Int,
+  val supported: Int,
+  val na: Int,
   val experimental: Boolean
-)
+) {
+  val total = supported + na
+}
 
 private fun sortedProjects(features: Map<String, Feature>, projects: Map<String, Project>): List<DisplayProject> {
   return projects.entries.map { project ->
@@ -121,12 +142,17 @@ private fun sortedProjects(features: Map<String, Feature>, projects: Map<String,
         if (!features.keys.contains(it.key)) {
           error("Unkown feature ${it.key} it project ${project.key}, please double check ${project.key}.json")
         }
-        it.value?.isSupportedForDisplay() == true
+        it.value?.toSupportStatus() is Supported
+      },
+      project.value.features.count {
+        it.value?.toSupportStatus() is NotApplicable
       }
     )
   }.sortedWith(
     compareBy<DisplayProject> {
-      it.score
+      it.total
+    }.thenBy {
+      it.supported
     }.reversed()
       .thenBy {
       it.name
@@ -140,16 +166,22 @@ private fun sortedFeatures(features: Map<String, Feature>, projects: Map<String,
       feature.key,
       feature.value.name,
       projects.values.count {
-        it.features.get(feature.key)?.isSupportedForDisplay() == true
+        it.features.get(feature.key).toSupportStatus() is Supported
+      },
+      projects.values.count {
+        it.features.get(feature.key).toSupportStatus() is NotApplicable
       },
       feature.value.experimental
     )
   }.sortedWith(
     compareBy<DisplayFeature> {
-       it.score
-    }.reversed().thenBy {
-      it.name
-    }
+      it.total
+    }.thenBy {
+      it.supported
+    }.reversed()
+      .thenBy {
+        it.name
+      }
   )
 }
 
