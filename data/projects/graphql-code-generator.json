@@ -3,5 +3,16 @@
   "type": "tool",
   "description": "GraphQL code generator with flexible support for custom plugins and templates like Typescript (frontend and backend), React Hooks, resolvers signatures and more.",
   "url": "https://github.com/dotansimha/graphql-code-generator",
-  "features": {}
+  "features": {
+    "capabilities": null,
+    "deprecated-objects": null,
+    "directives-on-directives": null,
+    "executable-documents-descriptions": null,
+    "fragment-arguments": null,
+    "graphql-response+json": null,
+    "on-error": null,
+    "one-of": null,
+    "semantic-introspection": null,
+    "semantic-non-null": null
+  }
 }

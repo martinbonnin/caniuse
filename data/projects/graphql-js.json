@@ -11,6 +11,14 @@
     },
     "one-of": {
       "since": "16.9.0"
-    }
+    },
+    "capabilities": null,
+    "deprecated-objects": null,
+    "directives-on-directives": null,
+    "executable-documents-descriptions": null,
+    "fragment-arguments": null,
+    "on-error": null,
+    "semantic-introspection": null,
+    "semantic-non-null": null
   }
 }

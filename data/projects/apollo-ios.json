@@ -3,5 +3,16 @@
   "type": "client",
   "description": "A GraphQL client for iOS that returns results as query-specific Swift types, and integrates with Xcode to show your Swift source and GraphQL side by side, with inline validation errors.",
   "url": "https://github.com/apollographql/apollo-ios",
-  "features": {}
+  "features": {
+    "capabilities": null,
+    "deprecated-objects": null,
+    "directives-on-directives": null,
+    "executable-documents-descriptions": null,
+    "fragment-arguments": null,
+    "graphql-response+json": null,
+    "on-error": null,
+    "one-of": null,
+    "semantic-introspection": null,
+    "semantic-non-null": null
+  }
 }

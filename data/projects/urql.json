@@ -3,5 +3,16 @@
   "type": "client",
   "description": "A highly customizable and versatile GraphQL client with which you add on features like normalized caching as you grow.",
   "url": "https://github.com/FormidableLabs/urql",
-  "features": {}
+  "features": {
+    "capabilities": null,
+    "deprecated-objects": null,
+    "directives-on-directives": null,
+    "executable-documents-descriptions": null,
+    "fragment-arguments": null,
+    "graphql-response+json": null,
+    "on-error": null,
+    "one-of": null,
+    "semantic-introspection": null,
+    "semantic-non-null": null
+  }
 }

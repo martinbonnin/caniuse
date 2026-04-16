@@ -3,5 +3,16 @@
   "type": "gateway",
   "description": "A configurable, high-performance routing runtime for Apollo Federation",
   "url": "https://github.com/apollographql/router",
-  "features": {}
+  "features": {
+    "capabilities": null,
+    "deprecated-objects": null,
+    "directives-on-directives": null,
+    "executable-documents-descriptions": null,
+    "fragment-arguments": null,
+    "graphql-response+json": null,
+    "on-error": null,
+    "one-of": null,
+    "semantic-introspection": null,
+    "semantic-non-null": null
+  }
 }

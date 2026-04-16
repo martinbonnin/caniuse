@@ -7,6 +7,15 @@
     "graphql-response+json": {
       "since": "13.0.0",
       "note": "[Apollo Server pull request](https://github.com/apollographql/apollo-server/pull/6827)"
-    }
+    },
+    "capabilities": null,
+    "deprecated-objects": null,
+    "directives-on-directives": null,
+    "executable-documents-descriptions": null,
+    "fragment-arguments": null,
+    "on-error": null,
+    "one-of": null,
+    "semantic-introspection": null,
+    "semantic-non-null": null
   }
 }

@@ -3,5 +3,16 @@
   "type": "ide",
   "description": "An interactive in-browser GraphQL IDE.",
   "url": "https://github.com/graphql/graphiql",
-  "features": {}
+  "features": {
+    "capabilities": null,
+    "deprecated-objects": null,
+    "directives-on-directives": null,
+    "executable-documents-descriptions": null,
+    "fragment-arguments": null,
+    "graphql-response+json": null,
+    "on-error": null,
+    "one-of": null,
+    "semantic-introspection": null,
+    "semantic-non-null": null
+  }
 }

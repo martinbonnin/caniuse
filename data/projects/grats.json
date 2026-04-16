@@ -1,7 +1,18 @@
 {
   "name": "Grats",
-  "type": "client",
+  "type": "server",
   "description": "Implementation-First GraphQL for TypeScript.",
   "url": "https://github.com/captbaritone/grats",
-  "features": {}
+  "features": {
+    "capabilities": null,
+    "deprecated-objects": null,
+    "directives-on-directives": null,
+    "executable-documents-descriptions": null,
+    "fragment-arguments": null,
+    "graphql-response+json": null,
+    "on-error": null,
+    "one-of": null,
+    "semantic-introspection": null,
+    "semantic-non-null": null
+  }
 }

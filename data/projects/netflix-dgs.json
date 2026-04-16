@@ -3,5 +3,16 @@
   "type": "server",
   "description": "The DGS Framework (Domain Graph Service) is a GraphQL server framework for Spring Boot, developed by Netflix.",
   "url": "https://github.com/netflix/dgs-framework",
-  "features": {}
+  "features": {
+    "capabilities": null,
+    "deprecated-objects": null,
+    "directives-on-directives": null,
+    "executable-documents-descriptions": null,
+    "fragment-arguments": null,
+    "graphql-response+json": null,
+    "on-error": null,
+    "one-of": null,
+    "semantic-introspection": null,
+    "semantic-non-null": null
+  }
 }

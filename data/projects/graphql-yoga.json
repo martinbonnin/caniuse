@@ -7,6 +7,15 @@
     "graphql-response+json": {
       "since": "3.4.1",
       "note": "[graphql-yoga pull request](https://github.com/dotansimha/graphql-yoga/pull/1616)"
-    }
+    },
+    "capabilities": null,
+    "deprecated-objects": null,
+    "directives-on-directives": null,
+    "executable-documents-descriptions": null,
+    "fragment-arguments": null,
+    "on-error": null,
+    "one-of": null,
+    "semantic-introspection": null,
+    "semantic-non-null": null
   }
 }

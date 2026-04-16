@@ -19,6 +19,21 @@
     },
     "deprecated-objects": {
       "since": null
+    },
+    "directives-on-directives": {
+      "since": "5.0.0-alpha.4"
+    },
+    "executable-documents-descriptions": {
+      "since": "4.0.0"
+    },
+    "fragment-arguments": {
+      "since": "5.0.0-alpha.5"
+    },
+    "semantic-introspection": {
+      "since": null
+    },
+    "semantic-non-null": {
+      "since": "4.0.0"
     }
   }
 }
