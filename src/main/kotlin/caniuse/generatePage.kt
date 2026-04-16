@@ -27,7 +27,7 @@ import kotlinx.html.ul
 import kotlinx.html.unsafe
 
 internal val markdownRenderer = MarkdownRenderer()
-internal val repo = "martinbonnin/caniuse"
+internal val repo = "graphql-community/caniuse"
 
 internal fun HTMLTag.markdown(markdown: String) {
   unsafe {
