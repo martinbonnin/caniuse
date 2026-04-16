@@ -9,7 +9,11 @@
     "directives-on-directives": null,
     "executable-documents-descriptions": null,
     "fragment-arguments": null,
-    "graphql-response+json": null,
+    "graphql-response+json": {
+      "since": null,
+      "applicable": false,
+      "note": "Grats is transport agnostic."
+    },
     "on-error": null,
     "one-of": null,
     "semantic-introspection": null,

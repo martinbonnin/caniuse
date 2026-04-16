@@ -1,6 +1,6 @@
 {
   "name": "gql.tada",
-  "type": "server",
+  "type": "tool",
   "description": "Magical GraphQL query engine for TypeScript.",
   "url": "https://github.com/0no-co/gql.tada",
   "features": {
@@ -9,7 +9,9 @@
     "directives-on-directives": null,
     "executable-documents-descriptions": null,
     "fragment-arguments": null,
-    "graphql-response+json": null,
+    "graphql-response+json": {
+      "since": "n/a"
+    },
     "on-error": null,
     "one-of": null,
     "semantic-introspection": null,

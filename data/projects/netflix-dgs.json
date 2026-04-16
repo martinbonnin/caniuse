@@ -9,7 +9,10 @@
     "directives-on-directives": null,
     "executable-documents-descriptions": null,
     "fragment-arguments": null,
-    "graphql-response+json": null,
+    "graphql-response+json": {
+      "since": "?",
+      "note": "[Discussion](https://github.com/Netflix/dgs-framework/discussions/1728)"
+    },
     "on-error": null,
     "one-of": null,
     "semantic-introspection": null,

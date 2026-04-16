@@ -5,7 +5,8 @@
   "url": "https://github.com/expoedia/graphql-kotlin",
   "features": {
     "graphql-response+json": {
-      "since": "7.0.0"
+      "since": "7.0.0",
+      "note": "[PR](https://github.com/ExpediaGroup/graphql-kotlin/pull/1699)"
     },
     "capabilities": null,
     "deprecated-objects": null,

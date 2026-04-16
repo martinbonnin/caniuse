@@ -9,7 +9,10 @@
     "directives-on-directives": null,
     "executable-documents-descriptions": null,
     "fragment-arguments": null,
-    "graphql-response+json": null,
+    "graphql-response+json": {
+      "since": null,
+      "note": "[issue](https://github.com/apollographql/router/issues/6851)"
+    },
     "on-error": null,
     "one-of": null,
     "semantic-introspection": null,
