@@ -3,8 +3,8 @@ package caniuse
 import kotlinx.html.*
 
 
-fun generateFeature(id: String, feature: Feature, projects: Map<String, Project>): String {
-  return generatePage(pathPrefix = "../") {
+fun generateFeature(id: String, feature: Feature, features: Map<String, Feature>, projects: Map<String, Project>): String {
+  return generatePage(features = features, projects = projects, pathPrefix = "../") {
     h1 { +feature.name }
     p { +feature.description }
     if (feature.url != null) {

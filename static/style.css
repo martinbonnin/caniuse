@@ -58,13 +58,68 @@ body::before {
 code, pre, kbd, samp {
   font-family: "Commit Mono", monospace;
 }
+/* Layout: sidebar + main */
+#layout {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+}
+#sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  padding: 1rem;
+  border-right: 1px solid var(--color-border);
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  max-height: 100vh;
+  font-size: 0.85rem;
+}
+#sidebar h4 {
+  margin: 1rem 0 0.25rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+}
+#sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#sidebar li {
+  margin: 0;
+}
+.sidebar-heading-link {
+  color: var(--color-muted);
+  text-decoration: none;
+}
+.sidebar-heading-link:hover {
+  color: var(--color-link);
+}
+.sidebar-link {
+  display: block;
+  padding: 0.2rem 0.5rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.sidebar-link:hover {
+  background: var(--color-hover);
+  color: var(--color-link);
+}
 main {
   position: relative;
   z-index: 1;
   max-width: 1000px;
+  min-width: 0;
   margin: 0 auto;
   padding: 1rem;
   flex: 1;
+}
+@media (max-width: 700px) {
+  #sidebar { display: none; }
 }
 #columns {
   display: grid;

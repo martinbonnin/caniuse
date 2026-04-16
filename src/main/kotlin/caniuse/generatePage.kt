@@ -14,12 +14,15 @@ import kotlinx.html.header
 import kotlinx.html.html
 import kotlinx.html.id
 import kotlinx.html.img
+import kotlinx.html.li
 import kotlinx.html.link
 import kotlinx.html.main
+import kotlinx.html.nav
 import kotlinx.html.p
 import kotlinx.html.script
 import kotlinx.html.stream.createHTML
 import kotlinx.html.title
+import kotlinx.html.ul
 import kotlinx.html.unsafe
 
 internal val markdownRenderer = MarkdownRenderer()
@@ -31,7 +34,12 @@ internal fun HTMLTag.markdown(markdown: String) {
   }
 }
 
-internal fun generatePage(pathPrefix: String = "", content: MAIN.() -> Unit): String {
+internal fun generatePage(
+  features: Map<String, Feature>,
+  projects: Map<String, Project>,
+  pathPrefix: String = "",
+  content: MAIN.() -> Unit,
+): String {
   return createHTML().html {
     head {
       title("Can I Use ... in GraphQL?")
@@ -89,8 +97,42 @@ internal fun generatePage(pathPrefix: String = "", content: MAIN.() -> Unit): St
           }
         }
       }
-      main {
-        content()
+      div {
+        id = "layout"
+        nav {
+          id = "sidebar"
+          h4 {
+            a(href = "${pathPrefix}index.html") {
+              classes = setOf("sidebar-heading-link")
+              +"Home"
+            }
+          }
+          h4 { +"Features" }
+          ul {
+            features.entries.sortedBy { it.value.name }.forEach { (featureId, feature) ->
+              li {
+                a(href = "${pathPrefix}feature/$featureId.html") {
+                  classes = setOf("sidebar-link")
+                  +feature.name
+                }
+              }
+            }
+          }
+          h4 { +"Projects" }
+          ul {
+            projects.entries.sortedBy { it.value.name }.forEach { (projectId, project) ->
+              li {
+                a(href = "${pathPrefix}project/$projectId.html") {
+                  classes = setOf("sidebar-link")
+                  +project.name
+                }
+              }
+            }
+          }
+        }
+        main {
+          content()
+        }
       }
       script {
         unsafe {

@@ -3,7 +3,7 @@ package caniuse
 import kotlinx.html.*
 
 fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>): String {
-  return generatePage {
+  return generatePage(features = features, projects = projects) {
     div {
       h1 { +"Can I use ... in GraphQL ?" }
       p {
@@ -106,7 +106,7 @@ private fun sortedProjects(features: Map<String, Feature>, projects: Map<String,
         if (!features.keys.contains(it.key)) {
           error("Unkown feature ${it.key} it project ${project.key}, please double check ${project.key}.json")
         }
-        it.value.isSupportedForDisplay()
+        it.value?.isSupportedForDisplay() == true
       }
     )
   }.sortedByDescending { it.score }
@@ -118,7 +118,7 @@ private fun sortedFeatures(features: Map<String, Feature>, projects: Map<String,
       feature.key,
       feature.value.name,
       projects.values.count {
-        it.features.keys.contains(feature.key)
+        it.features.get(feature.key)?.isSupportedForDisplay() == true
       }
     )
   }.sortedByDescending { it.score }

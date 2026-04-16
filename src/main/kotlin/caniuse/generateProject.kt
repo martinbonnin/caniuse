@@ -5,8 +5,8 @@ import kotlinx.html.*
 @JvmInline
 internal value class Markdown(val value: String)
 
-internal fun generateProject(id: String, project: Project, features: Map<String, Feature>): String {
-  return generatePage(pathPrefix = "../") {
+internal fun generateProject(id: String, project: Project, features: Map<String, Feature>, projects: Map<String, Project>): String {
+  return generatePage(features = features, projects = projects, pathPrefix = "../") {
     h1 { +project.name }
     p { +project.description }
     p {

@@ -8,7 +8,7 @@ data class Project(
     val type: String,
     val description: String,
     val url: String,
-    val features: Map<String, SupportInfo>,
+    val features: Map<String, SupportInfo?>,
 )
 
 @Serializable
