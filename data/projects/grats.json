@@ -10,8 +10,7 @@
     "executable-documents-descriptions": null,
     "fragment-arguments": null,
     "graphql-response+json": {
-      "since": null,
-      "applicable": false,
+      "since": "n/a",
       "note": "Grats is transport agnostic."
     },
     "on-error": null,

@@ -18,7 +18,7 @@
       "since": "4.0.0"
     },
     "deprecated-objects": {
-      "since": null
+      "since": "-"
     },
     "directives-on-directives": {
       "since": "5.0.0-alpha.4"
@@ -30,7 +30,7 @@
       "since": "5.0.0-alpha.5"
     },
     "semantic-introspection": {
-      "since": null
+      "since": "-"
     },
     "semantic-non-null": {
       "since": "4.0.0"

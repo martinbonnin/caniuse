@@ -5,8 +5,7 @@
   "url": "https://github.com/graphql/graphql-js",
   "features": {
     "graphql-response+json": {
-      "since": null,
-      "applicable": false,
+      "since": "n/a",
       "note": "graphql-js is transport agnostic. It's up to servers to implement this feature."
     },
     "one-of": {

@@ -20,6 +20,13 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
         }
         + " for how to add a new project, feature, or to add an existing feature to an existing project."
       }
+
+      p {
+        b {
+          +"Note:"
+        }
+        +" This website is still under construction and data is still **very** incomplete."
+      }
     }
     div {
       id = "columns"
@@ -125,5 +132,10 @@ private fun sortedFeatures(features: Map<String, Feature>, projects: Map<String,
 }
 
 private fun SupportInfo.isSupportedForDisplay(): Boolean {
-  return applicable == false || this.since != null
+  return when (toSupportStatus()) {
+    is Supported -> true
+    NotApplicable -> true
+    NotSupported -> false
+    Unknown -> false
+  }
 }

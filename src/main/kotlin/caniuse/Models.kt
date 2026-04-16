@@ -22,5 +22,4 @@ data class Feature(
 data class SupportInfo(
     val since: String? = null,
     val note: String? = null,
-    val applicable: Boolean? = null,
 )

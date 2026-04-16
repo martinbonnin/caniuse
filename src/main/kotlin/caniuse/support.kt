@@ -26,32 +26,32 @@ internal fun projectEntries(id: String, projects: Map<String, Project>): List<Su
   }.sortedBy { it.name }
 }
 
-private fun SupportInfo?.toSupportEntry(id: String, name: String, link: String): SupportEntry {
-  val status = if (this == null) {
+internal fun SupportInfo?.toSupportStatus(): SupportStatus {
+  return if (this?.since == null || since == "?") {
     Unknown
-  } else if (applicable == false) {
+  } else if (since == "n/a") {
     NotApplicable
-  } else if (since == null) {
+  } else if (since == "-") {
     NotSupported
   } else {
     Supported(since)
   }
+}
 
-  val note = if (this == null) {
+private fun SupportInfo?.toSupportEntry(id: String, name: String, link: String): SupportEntry {
+  val status = toSupportStatus()
+
+  val note = if (this?.since == null) {
     "[Contribute](https://github.com/$repo/edit/main/data/projects/$id.json)"
-  } else if (applicable == false) {
-    note
-  } else if (since == null) {
-    note
   } else {
     note
   }
 
-  val label = if (this == null) {
+  val label = if (this?.since == null || since == "?") {
     "?"
-  } else if (applicable == false) {
+  } else if (since == "n/a") {
     "N/A"
-  } else if (since == null) {
+  } else if (since == "-") {
     "-"
   } else {
     since

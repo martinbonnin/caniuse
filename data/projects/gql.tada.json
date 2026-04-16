@@ -10,7 +10,8 @@
     "executable-documents-descriptions": null,
     "fragment-arguments": null,
     "graphql-response+json": {
-      "since": "n/a"
+      "since": "n/a",
+      "note": "gql.tada is transport agnostic"
     },
     "on-error": null,
     "one-of": null,

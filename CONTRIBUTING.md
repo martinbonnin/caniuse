@@ -24,9 +24,11 @@ The `feature-id` must match the filename (without `.json`) of an existing featur
 
 Each feature entry supports the following fields:
 
-- `since` — the first version that supports the feature (set to `null` if not yet supported).
+- `since` — the first version that supports the feature or one of the special values:
+  - `-` if not supported
+  - `n/a` if not applicable 
+  - `?` if unknown
 - `note` (optional) — any clarification about the support (Markdown is supported).
-- `applicable` (optional) — set to `false` if the feature doesn't apply to this project (e.g. a transport-level feature for a transport-agnostic library).
 
 ### Add a new project
 

@@ -9,7 +9,10 @@
     "directives-on-directives": null,
     "executable-documents-descriptions": null,
     "fragment-arguments": null,
-    "graphql-response+json": null,
+    "graphql-response+json": {
+      "since": "1.4.0",
+      "note": "[commit](https://github.com/spring-projects/spring-graphql/commit/c5fef9b4ab4bcd3d79a5617534298fe249b95211)"
+    },
     "on-error": null,
     "one-of": null,
     "semantic-introspection": null,

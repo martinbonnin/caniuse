@@ -10,7 +10,7 @@
     "executable-documents-descriptions": null,
     "fragment-arguments": null,
     "graphql-response+json": {
-      "since": null,
+      "since": "-",
       "note": "[issue](https://github.com/apollographql/router/issues/6851)"
     },
     "on-error": null,
