@@ -12,12 +12,15 @@
       "since": "16.9.0"
     },
     "capabilities": {
-      "since": "?",
+      "since": "-",
       "note": "[pr](https://github.com/graphql/graphql-js/pull/4523)"
     },
-    "deprecated-objects": null,
+    "deprecated-objects": {
+      "since": "-",
+      "note": "[pr](https://github.com/graphql/graphql-js/pull/3818)"
+    },
     "directives-on-directives": {
-      "since": "?",
+      "since": "-",
       "note": "[pr](https://github.com/graphql/graphql-js/pull/4521)"
     },
     "executable-documents-descriptions": {
@@ -29,10 +32,15 @@
       "note": "[pr](https://github.com/graphql/graphql-js/pull/4015)"
     },
     "on-error": {
-      "since": "?",
+      "since": "-",
       "note": "[pr](https://github.com/graphql/graphql-js/pull/4364)"
     },
-    "semantic-introspection": null,
-    "semantic-non-null": null
+    "semantic-introspection": {
+      "since": "-"
+    },
+    "semantic-non-null": {
+      "since": "n/a",
+      "note": "`@semanticNonNull` is not a built-in directive and will probably never be. It's only used as a transitional phase while tools migrate to `onError: NULL`."
+    }
   }
 }

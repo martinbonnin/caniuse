@@ -4,17 +4,42 @@
   "description": "A GraphQL client for iOS that returns results as query-specific Swift types, and integrates with Xcode to show your Swift source and GraphQL side by side, with inline validation errors.",
   "url": "https://github.com/apollographql/apollo-ios",
   "features": {
-    "capabilities": null,
-    "deprecated-objects": null,
-    "directives-on-directives": null,
-    "executable-documents-descriptions": null,
-    "fragment-arguments": null,
+    "capabilities": {
+      "since": "n/a",
+      "note": "There is no server capability so far that could justify adding support in Apollo Client"
+    },
+    "deprecated-objects": {
+      "since": "-",
+      "note": "Requires support in GraphQL.js"
+    },
+    "directives-on-directives": {
+      "since": "-",
+      "note": "Requires support in GraphQL.js"
+    },
+    "executable-documents-descriptions": {
+      "since": "-",
+      "note": "Requires support in GraphQL.js"
+    },
+    "fragment-arguments": {
+      "since": "-",
+      "note": "Requires support in GraphQL.js"
+    },
     "graphql-response+json": {
       "since": "1.16.1"
     },
-    "on-error": null,
-    "one-of": null,
-    "semantic-introspection": null,
-    "semantic-non-null": null
+    "on-error": {
+      "since": "-"
+    },
+    "one-of": {
+      "since": "1.16.0",
+      "note": "[pr](https://github.com/apollographql/apollo-ios-dev/pull/537), [release](https://github.com/apollographql/apollo-ios/releases/tag/1.16.0)"
+    },
+    "semantic-introspection": {
+      "since": "n/a",
+      "note": "Not applicable to clients."
+    },
+    "semantic-non-null": {
+      "since": "-"
+    }
   }
 }

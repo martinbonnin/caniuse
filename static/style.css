@@ -181,7 +181,7 @@ h1 + .tag-experimental {
   padding: 0.5rem 0.75rem;
   border: 1px solid #CFD3C5;
   text-align: left;
-  vertical-align: top;
+  vertical-align: middle;
 }
 .support-table th {
   font-weight: 600;
@@ -200,6 +200,7 @@ h1 + .tag-experimental {
 .support-table td.support-unknown {
   color: #000;
   text-align: center;
+  vertical-align: middle;
 }
 .support-table td.support-yes {
   background: #a8d5a2;
