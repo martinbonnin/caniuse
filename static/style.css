@@ -133,6 +133,36 @@ main {
 }
 a { color: var(--color-link); }
 
+/* Tags */
+h1 + .tag-experimental {
+  margin-top: -2rem;
+}
+.tag-experimental {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.2em 0.6em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #e535ab;
+  cursor: help;
+}
+.tag-experimental-small {
+  display: inline-block;
+  margin-left: 0.4em;
+  padding: 0 0.35em;
+  font-size: 0.7em;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #fff;
+  background: #e535ab;
+  cursor: help;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
 /* Support table */
 .support-table {
   width: 100%;

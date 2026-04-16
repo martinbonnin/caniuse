@@ -1,5 +1,6 @@
 {
   "name": "Fragment Arguments",
   "description": "Fragment arguments allow passing explicit arguments to fragments",
-  "url": "https://github.com/graphql/graphql-spec/pull/1224"
+  "url": "https://github.com/graphql/graphql-spec/pull/1224",
+  "experimental": true
 }

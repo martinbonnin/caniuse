@@ -48,6 +48,13 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
             span {
               classes = setOf("feature-bar-label")
               +it.name
+              if (it.experimental) {
+                span {
+                  classes = setOf("tag-experimental-small")
+                  attributes["title"] = "This feature has not been merged in a specification draft yet"
+                  +"E"
+                }
+              }
             }
             span {
               classes = setOf("feature-bar-score")
@@ -101,7 +108,8 @@ private class DisplayProject(
 private class DisplayFeature(
   val id: String,
   val name: String,
-  val score: Int
+  val score: Int,
+  val experimental: Boolean
 )
 
 private fun sortedProjects(features: Map<String, Feature>, projects: Map<String, Project>): List<DisplayProject> {
@@ -126,7 +134,8 @@ private fun sortedFeatures(features: Map<String, Feature>, projects: Map<String,
       feature.value.name,
       projects.values.count {
         it.features.get(feature.key)?.isSupportedForDisplay() == true
-      }
+      },
+      feature.value.experimental
     )
   }.sortedByDescending { it.score }
 }

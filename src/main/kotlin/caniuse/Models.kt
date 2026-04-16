@@ -16,6 +16,7 @@ data class Feature(
     val name: String,
     val description: String,
     val url: String? = null,
+    val experimental: Boolean = false,
 )
 
 @Serializable
