@@ -11,7 +11,7 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
       }
       p {
         +"The data for this website is open source ("
-        a(href = "https://github.com/$repo/blob/main/CONTRIBUTING.md") {
+        a(href = "https://github.com/$repo") {
           +"GitHub repository"
         }
         +") and contributions are warmly welcome. Please see "
