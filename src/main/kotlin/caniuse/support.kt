@@ -42,7 +42,7 @@ private fun SupportInfo?.toSupportEntry(id: String, name: String, link: String):
   val status = toSupportStatus()
 
   val note = if (this?.since == null) {
-    "Know the status of this feature? [Let use know!](https://github.com/$repo/edit/main/data/projects/$id.json)"
+    "Know the status of this feature? [Let us know!](https://github.com/$repo/edit/main/data/projects/$id.json)"
   } else {
     note
   }

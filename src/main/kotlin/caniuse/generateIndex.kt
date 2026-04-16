@@ -7,7 +7,7 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
     div {
       h1 { +"Can I use ... in GraphQL ?" }
       p {
-        +"A directory of GraphQL features, both drafted and experimental, and the state of their support accross different projects."
+        +"A directory of GraphQL features, both drafted and experimental, and the state of their support across different projects."
       }
       p {
         +"The data for this website is open source ("
@@ -133,7 +133,7 @@ private fun sortedProjects(features: Map<String, Feature>, projects: Map<String,
       project.value.name,
       project.value.features.count {
         if (!features.keys.contains(it.key)) {
-          error("Unkown feature ${it.key} it project ${project.key}, please double check ${project.key}.json")
+          error("Unkown feature ${it.key} in project ${project.key}, please double check ${project.key}.json")
         }
         it.value?.toSupportStatus() is Supported
       },
@@ -176,13 +176,4 @@ private fun sortedFeatures(features: Map<String, Feature>, projects: Map<String,
         it.name
       }
   )
-}
-
-private fun SupportInfo.isSupportedForDisplay(): Boolean {
-  return when (toSupportStatus()) {
-    is Supported -> true
-    NotApplicable -> true
-    NotSupported -> false
-    Unknown -> false
-  }
 }
