@@ -8,21 +8,25 @@ The most impactful way to contribute is by adding or updating data. All data liv
 
 ### Add support for a feature in an existing project
 
-Edit the feature file in `data/features/<feature-id>.json` and add an entry to the `projects` map:
+Edit the project file in `data/projects/<project-id>.json` and add an entry to the `features` map:
 
 ```json
 {
-  "projects": {
-    "your-project-id": {
+  "features": {
+    "feature-id": {
       "since": "1.2.0"
     }
   }
 }
 ```
 
-- `since` — the first version that supports the feature.
-- `note` (optional) — any clarification about the support.
-- `relevant` (optional) — set to `false` if the feature doesn't apply to this project (e.g. a transport-level feature for a transport-agnostic library).
+The `feature-id` must match the filename (without `.json`) of an existing feature in `data/features/`.
+
+Each feature entry supports the following fields:
+
+- `since` — the first version that supports the feature (set to `null` if not yet supported).
+- `note` (optional) — any clarification about the support (Markdown is supported).
+- `applicable` (optional) — set to `false` if the feature doesn't apply to this project (e.g. a transport-level feature for a transport-agnostic library).
 
 ### Add a new project
 
@@ -33,11 +37,14 @@ Create a new file `data/projects/<project-id>.json`:
   "name": "My Project",
   "type": "client",
   "description": "A short description of the project.",
-  "url": "https://github.com/org/my-project"
+  "url": "https://github.com/org/my-project",
+  "features": {}
 }
 ```
 
-`type` is typically `client`, `server`, or `tool`.
+`type` is typically `client`, `server`, `gateway`, `ide`, or `tool`.
+
+Then add feature support entries as described above.
 
 ### Add a new feature
 
@@ -46,12 +53,15 @@ Create a new file `data/features/<feature-id>.json`:
 ```json
 {
   "name": "Feature Name",
-  "description": "A description of the feature. Markdown is supported.",
-  "projects": {}
+  "description": "A description of the feature.",
+  "url": "https://link-to-spec-or-proposal"
 }
 ```
 
-Then add project support entries as described above.
+- `description` — a plain-text description of the feature.
+- `url` (optional) — a link to the relevant spec, proposal, or RFC.
+
+Then add support entries for this feature in the relevant project files.
 
 ## Building the site locally
 
@@ -65,5 +75,5 @@ The generated site is in `build/site/`.
 
 - Keep descriptions concise.
 - Use the project's official name.
-- Link to the relevant spec or proposal in feature descriptions.
+- Link to the relevant spec or proposal via the feature's `url` field.
 - When in doubt, open an issue or a draft PR — we're happy to help!

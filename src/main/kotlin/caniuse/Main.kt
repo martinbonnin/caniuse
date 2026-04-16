@@ -11,11 +11,15 @@ fun main(args: Array<String>) {
 
     val projects: Map<String, Project> = File("data/projects").listFiles()!!
         .filter { it.extension == "json" }
-        .associate { it.nameWithoutExtension to json.decodeFromString<Project>(it.readText()) }
+        .associate {
+            it.nameWithoutExtension to json.decodeFromString<Project>(it.readText())
+        }
 
     val features: Map<String, Feature> = File("data/features").listFiles()!!
         .filter { it.extension == "json" }
-        .associate { it.nameWithoutExtension to json.decodeFromString<Feature>(it.readText()) }
+        .associate {
+            it.nameWithoutExtension to json.decodeFromString<Feature>(it.readText())
+        }
 
 
     File("static").copyRecursively(outputDir, overwrite = true)
