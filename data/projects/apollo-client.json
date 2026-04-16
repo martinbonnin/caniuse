@@ -4,18 +4,37 @@
   "description": "A powerful JavaScript GraphQL client, designed to work well with React, React Native, Angular 2, or just plain JavaScript.",
   "url": "https://github.com/apollographql/apollo-client",
   "features": {
-    "capabilities": null,
-    "deprecated-objects": null,
-    "directives-on-directives": null,
-    "executable-documents-descriptions": null,
-    "fragment-arguments": null,
+    "capabilities": {
+      "since": "n/a",
+      "note": "There is no server capability so far that could justify adding support in Apollo Client"
+    },
+    "deprecated-objects": {
+      "since": "n/a"
+    },
+    "directives-on-directives": {
+      "since": "n/a"
+    },
+    "executable-documents-descriptions": {
+      "since": "n/a"
+    },
+    "fragment-arguments": {
+      "since": "-"
+    },
     "graphql-response+json": {
       "since": "4.0.0",
       "note": "[PR](https://github.com/apollographql/apollo-client/pull/12254)"
     },
-    "on-error": null,
-    "one-of": null,
-    "semantic-introspection": null,
-    "semantic-non-null": null
+    "on-error": {
+      "since": "-"
+    },
+    "one-of": {
+      "since": "n/a"
+    },
+    "semantic-introspection": {
+      "since": "n/a"
+    },
+    "semantic-non-null": {
+      "since": "n/a"
+    }
   }
 }
