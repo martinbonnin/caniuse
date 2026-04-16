@@ -11,7 +11,7 @@
     "fragment-arguments": null,
     "graphql-response+json": {
       "since": "3.2.0",
-      "note": "[PR](https://github.com/urql-graphql/urql/pull/3007)"
+      "note": "[pr](https://github.com/urql-graphql/urql/pull/3007)"
     },
     "on-error": null,
     "one-of": null,

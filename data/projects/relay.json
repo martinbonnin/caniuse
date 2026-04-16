@@ -10,11 +10,15 @@
     "executable-documents-descriptions": null,
     "fragment-arguments": null,
     "graphql-response+json": {
-      "since": "?"
+      "since": "n/a",
+      "note": "Relay is transport agnostic ([doc](https://relay.dev/docs/guides/network-layer/))."
     },
     "on-error": null,
     "one-of": null,
     "semantic-introspection": null,
-    "semantic-non-null": null
+    "semantic-non-null": {
+      "since": "18.0.0",
+      "note": "[doc](https://relay.dev/docs/guides/semantic-nullability/)"
+    }
   }
 }

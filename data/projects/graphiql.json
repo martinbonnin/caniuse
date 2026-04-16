@@ -9,7 +9,10 @@
     "directives-on-directives": null,
     "executable-documents-descriptions": null,
     "fragment-arguments": null,
-    "graphql-response+json": null,
+    "graphql-response+json": {
+      "since": "-",
+      "note": "[issue](https://github.com/graphql/graphiql/issues/4189)"
+    },
     "on-error": null,
     "one-of": null,
     "semantic-introspection": null,

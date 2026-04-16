@@ -15,7 +15,12 @@
     },
     "on-error": null,
     "one-of": null,
-    "semantic-introspection": null,
-    "semantic-non-null": null
+    "semantic-introspection": {
+      "since": "n/a"
+    },
+    "semantic-non-null": {
+      "since": "4.6.0",
+      "note": "[pr](https://github.com/dotansimha/graphql-code-generator/pull/10315), [release](https://github.com/dotansimha/graphql-code-generator/releases/tag/release-1743074721096)"
+    }
   }
 }

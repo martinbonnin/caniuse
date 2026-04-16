@@ -6,7 +6,7 @@
   "features": {
     "graphql-response+json": {
       "since": "n/a",
-      "note": "graphql-java is transport agnostic. It's up to servers to implement this feature."
+      "note": "GraphQL Java is transport agnostic."
     },
     "one-of": {
       "since": "21.2"

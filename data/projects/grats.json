@@ -16,6 +16,9 @@
     "on-error": null,
     "one-of": null,
     "semantic-introspection": null,
-    "semantic-non-null": null
+    "semantic-non-null": {
+      "since": "0.0.12",
+      "note": "[doc](https://grats.capt.dev/docs/guides/strict-semantic-nullability/), [commit](https://github.com/captbaritone/grats/commit/d4347092e81469a3920abc4a6750a5c4ca3f7b24)"
+    }
   }
 }

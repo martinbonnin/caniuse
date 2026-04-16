@@ -6,7 +6,7 @@
   "features": {
     "graphql-response+json": {
       "since": "13.0.0",
-      "note": "[PR](https://github.com/ChilliCream/graphql-platform/pull/5367)"
+      "note": "[pr](https://github.com/ChilliCream/graphql-platform/pull/5367)"
     },
     "one-of": {
       "since": "15.0.0"

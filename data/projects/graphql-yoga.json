@@ -6,7 +6,7 @@
   "features": {
     "graphql-response+json": {
       "since": "3.4.1",
-      "note": "[PR](https://github.com/dotansimha/graphql-yoga/pull/1616)"
+      "note": "[pr](https://github.com/dotansimha/graphql-yoga/pull/1616)"
     },
     "capabilities": null,
     "deprecated-objects": null,
