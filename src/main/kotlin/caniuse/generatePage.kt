@@ -17,6 +17,7 @@ import kotlinx.html.img
 import kotlinx.html.li
 import kotlinx.html.link
 import kotlinx.html.main
+import kotlinx.html.meta
 import kotlinx.html.nav
 import kotlinx.html.p
 import kotlinx.html.script
@@ -42,6 +43,7 @@ internal fun generatePage(
 ): String {
   return createHTML().html {
     head {
+      meta(name = "viewport", content = "width=device-width, initial-scale=1")
       title("Can I Use ... in GraphQL?")
       link(rel = "icon", type = "image/svg+xml", href = "${pathPrefix}caniuse.svg")
       link(rel = "stylesheet", href = "${pathPrefix}pagefind/pagefind-ui.css")

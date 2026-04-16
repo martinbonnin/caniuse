@@ -118,7 +118,7 @@ main {
   padding: 1rem;
   flex: 1;
 }
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   #sidebar { display: none; }
 }
 #columns {
@@ -126,7 +126,7 @@ main {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   #columns {
     grid-template-columns: 1fr;
   }
@@ -438,7 +438,7 @@ header h1 { margin: 0; }
   border-color: rgba(255, 255, 255, 0.15);
   background: rgba(255, 255, 255, 0.05);
 }
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   #search { width: 160px; }
   #search-kbd { display: none; }
 }
