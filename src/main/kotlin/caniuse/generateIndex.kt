@@ -20,6 +20,23 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
         }
         + " for how to add a new project, feature, or to add an existing feature to an existing project."
       }
+
+      p {
+        unsafe {
+
+        }
+        +"GraphQL is a wonderful piece of technology. It's not (yet!) perfect though. In the past few years, the community has been "
+        a(href = "https://github.com/graphql/graphql-wg/", target = "blank") {
+          +"hard at work"
+        }
+        +" improving the daily GraphQL experience."
+      }
+      p {
+        +"Most of the friction points have identified solutions. But it's sometimes hard to know what feature is implemented where."
+      }
+      p {
+        +"This site aims to document those solutions so we can move the ecosystem together."
+      }
     }
     div {
       id = "columns"
@@ -31,8 +48,8 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
 
         val maxScore = projects.size
         sortedFeatures(features, projects).forEach {
-          val supportedPercent = if (maxScore > 0) (it.supported * 100) / maxScore else 0
-          val naPercent = if (maxScore > 0) (it.na * 100) / maxScore else 0
+          val supportedPercent = if (maxScore > 0) (it.supported * 100.0) / maxScore else 0.0
+          val naPercent = if (maxScore > 0) (it.na * 100.0) / maxScore else 0.0
           a(href = "feature/${it.id}.html") {
             classes = setOf("feature-bar")
             attributes["title"] = "${it.supported} supported, ${it.na} not applicable"
@@ -69,8 +86,8 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
         }
         val maxFeatures = features.size
         sortedProjects(features, projects).forEach {
-          val supportedPercent = if (maxFeatures > 0) (it.supported * 100) / maxFeatures else 0
-          val naPercent = if (maxFeatures > 0) (it.na * 100) / maxFeatures else 0
+          val supportedPercent = if (maxFeatures > 0) (it.supported * 100.0) / maxFeatures else 0.0
+          val naPercent = if (maxFeatures > 0) (it.na * 100.0) / maxFeatures else 0.0
           a(href = "project/${it.id}.html") {
             classes = setOf("project-bar")
             attributes["title"] = "${it.supported} supported, ${it.na} not applicable"
