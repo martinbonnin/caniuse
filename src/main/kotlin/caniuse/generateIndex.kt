@@ -124,7 +124,14 @@ private fun sortedProjects(features: Map<String, Feature>, projects: Map<String,
         it.value?.isSupportedForDisplay() == true
       }
     )
-  }.sortedByDescending { it.score }
+  }.sortedWith(
+    compareBy<DisplayProject> {
+      it.score
+    }.reversed()
+      .thenBy {
+      it.name
+    }
+  )
 }
 
 private fun sortedFeatures(features: Map<String, Feature>, projects: Map<String, Project>): List<DisplayFeature> {
@@ -137,7 +144,13 @@ private fun sortedFeatures(features: Map<String, Feature>, projects: Map<String,
       },
       feature.value.experimental
     )
-  }.sortedByDescending { it.score }
+  }.sortedWith(
+    compareBy<DisplayFeature> {
+       it.score
+    }.reversed().thenBy {
+      it.name
+    }
+  )
 }
 
 private fun SupportInfo.isSupportedForDisplay(): Boolean {
