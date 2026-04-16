@@ -1,0 +1,12 @@
+{
+  "name": "Apollo Server",
+  "type": "server",
+  "description": "A GraphQL server from Apollo that works with any Node.js HTTP framework",
+  "url": "https://github.com/apollographql/apollo-server",
+  "features": {
+    "graphql-response+json": {
+      "since": "13.0.0",
+      "note": "[Apollo Server pull request](https://github.com/apollographql/apollo-server/pull/6827)"
+    }
+  }
+}

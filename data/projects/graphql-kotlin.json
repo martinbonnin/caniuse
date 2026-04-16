@@ -1,0 +1,11 @@
+{
+  "name": "GraphQL Kotlin",
+  "type": "server",
+  "description": "Implementation first server for Kotlin.",
+  "url": "https://github.com/expoedia/graphql-kotlin",
+  "features": {
+    "graphql-response+json": {
+      "since": "7.0.0"
+    }
+  }
+}

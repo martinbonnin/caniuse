@@ -1,0 +1,16 @@
+{
+  "name": "GraphQL.js",
+  "type": "server",
+  "description": "The reference implementation of the GraphQL specification, designed for running GraphQL in a Node.js environment.",
+  "url": "https://github.com/graphql/graphql-js",
+  "features": {
+    "graphql-response+json": {
+      "since": null,
+      "applicable": false,
+      "note": "graphql-js is transport agnostic. It's up to servers to implement this feature."
+    },
+    "one-of": {
+      "since": "16.9.0"
+    }
+  }
+}

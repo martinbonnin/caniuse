@@ -1,0 +1,13 @@
+[versions]
+kotlin = "2.4.0-Beta1"
+flexmark = "0.64.8"
+kotlinx-serialization = "1.11.0"
+
+[libraries]
+kotlinx-html = "org.jetbrains.kotlinx:kotlinx-html-jvm:0.12.0"
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+flexmark-all = { module = "com.vladsch.flexmark:flexmark-all", version.ref = "flexmark" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

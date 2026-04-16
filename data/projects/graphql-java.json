@@ -1,0 +1,16 @@
+{
+  "name": "GraphQL Java",
+  "type": "server",
+  "description": "A Java library for building GraphQL APIs.",
+  "url": "https://github.com/graphql-java/graphql-java",
+  "features": {
+    "graphql-response+json": {
+      "since": null,
+      "applicable": false,
+      "note": "graphql-java is transport agnostic. It's up to servers to implement this feature."
+    },
+    "one-of": {
+      "since": "21.2"
+    }
+  }
+}

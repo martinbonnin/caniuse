@@ -1,0 +1,7 @@
+{
+  "name": "GraphQL Code Generator",
+  "type": "tool",
+  "description": "GraphQL code generator with flexible support for custom plugins and templates like Typescript (frontend and backend), React Hooks, resolvers signatures and more.",
+  "url": "https://github.com/dotansimha/graphql-code-generator",
+  "features": {}
+}

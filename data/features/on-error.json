@@ -1,0 +1,5 @@
+{
+  "name": "'onError' request parameter",
+  "description": "The `onError` request parameter allows client to opt-out of null bubbling, allowing schemas to reprensent the true nullability of their data",
+  "url": "https://github.com/graphql/graphql-spec/pull/1163"
+}

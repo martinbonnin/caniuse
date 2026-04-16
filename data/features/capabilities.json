@@ -1,0 +1,5 @@
+{
+  "name": "Service capabilities",
+  "description": "Service capabilities are a mechanism for GraphQL services to advertise features and configuration that exist outside the type system - for example support for syntax features (executable descriptions, fragment arguments, document directives, etc), details of transport support (websocket endpoint, SSE endpoint, how to be notified of new schema versions), and other details that can enable automated client configuration",
+  "url": "https://github.com/graphql/graphql-spec/pull/1208"
+}

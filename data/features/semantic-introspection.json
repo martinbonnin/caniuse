@@ -1,0 +1,5 @@
+{
+  "name": "Semantic Introspection",
+  "description": "Semantic introspection makes it easy for AI agents to query parts of the schema",
+  "url": "https://github.com/graphql/ai-wg/blob/main/rfcs/semantic-introspection.md"
+}

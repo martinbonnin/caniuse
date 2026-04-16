@@ -1,0 +1,24 @@
+{
+  "name": "Apollo Kotlin",
+  "type": "client",
+  "description": "A strongly-typed, caching GraphQL client for the JVM, Android, and Kotlin multiplatform.",
+  "url": "https://github.com/apollographql/apollo-kotlin",
+  "features": {
+    "capabilities": {
+      "since": "5.0.0-alpha.5"
+    },
+    "graphql-response+json": {
+      "since": "4.1.0",
+      "note": "[Apollo Kotlin pull request](https://github.com/apollographql/apollo-kotlin/pull/6170)"
+    },
+    "on-error": {
+      "since": "5.0.0-alpha.5"
+    },
+    "one-of": {
+      "since": "4.0.0"
+    },
+    "deprecated-objects": {
+      "since": null
+    }
+  }
+}

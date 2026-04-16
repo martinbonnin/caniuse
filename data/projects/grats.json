@@ -1,0 +1,7 @@
+{
+  "name": "Grats",
+  "type": "client",
+  "description": "Implementation-First GraphQL for TypeScript.",
+  "url": "https://github.com/captbaritone/grats",
+  "features": {}
+}

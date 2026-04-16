@@ -1,0 +1,15 @@
+{
+  "name": "Hot Chocolate",
+  "type": "server",
+  "description": "Hot Chocolate is an open-source GraphQL Server for .NET",
+  "url": "https://github.com/ChilliCream/hotchocolate",
+  "features": {
+    "graphql-response+json": {
+      "since": "13.0.0",
+      "note": "[Hot Chocolate pull request](https://github.com/ChilliCream/graphql-platform/pull/5367)"
+    },
+    "one-of": {
+      "since": "15.0.0"
+    }
+  }
+}

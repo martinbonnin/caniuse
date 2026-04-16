@@ -1,0 +1,12 @@
+{
+  "name": "GraphQL Yoga",
+  "type": "server",
+  "description": "GraphQL Yoga is a batteries-included cross-platform GraphQL over HTTP spec-compliant GraphQL Server using Envelop and GraphQL Tools.",
+  "url": "https://github.com/dotansimha/graphql-yoga",
+  "features": {
+    "graphql-response+json": {
+      "since": "3.4.1",
+      "note": "[graphql-yoga pull request](https://github.com/dotansimha/graphql-yoga/pull/1616)"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Domain Graph Service (DGS) Framework",
+  "type": "server",
+  "description": "The DGS Framework (Domain Graph Service) is a GraphQL server framework for Spring Boot, developed by Netflix.",
+  "url": "https://github.com/netflix/dgs-framework",
+  "features": {}
+}
