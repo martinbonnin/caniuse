@@ -401,9 +401,7 @@ header h1 { margin: 0; }
   width: 560px;
   top: 100%;
   margin-top: 10px;
-  background: color-mix(in srgb, var(--color-bg) 70%, transparent);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: 0;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
