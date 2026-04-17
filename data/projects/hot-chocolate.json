@@ -9,18 +9,28 @@
       "note": "[pr](https://github.com/ChilliCream/graphql-platform/pull/5367)"
     },
     "one-of": {
-      "since": "15.0.0"
+      "since": "13.0.0"
     },
-    "capabilities": null,
+    "capabilities": {
+      "since": "16.0.0"
+    },
     "deprecated-objects": null,
     "directives-on-directives": null,
     "executable-documents-descriptions": {
       "since": "16.0.0",
       "note": "[pr](https://github.com/ChilliCream/graphql-platform/pull/8351)"
     },
-    "fragment-arguments": null,
-    "on-error": null,
-    "semantic-introspection": null,
-    "semantic-non-null": null
+    "fragment-arguments": {
+      "since": "0.8.0"
+    },
+    "on-error": {
+      "since": "16.0.0"
+    }
+    "semantic-introspection": {
+      "since": "16.0.0"
+    }
+    "semantic-non-null": {
+      "since": "14.0.0"
+    }
   }
 }
