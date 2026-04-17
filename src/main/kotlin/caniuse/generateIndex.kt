@@ -25,17 +25,18 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
         unsafe {
 
         }
-        +"GraphQL is a wonderful piece of technology. It's not (yet!) perfect though. In the past few years, the community has been "
+        +"GraphQL is a wonderful piece of technology. The GraphQL spec has been a very solid foundation for the past 10 years. It's not (yet!) perfect though. In the past few years, the community has been "
         a(href = "https://github.com/graphql/graphql-wg/", target = "blank") {
           +"hard at work"
         }
         +" improving the daily GraphQL experience."
       }
       p {
-        +"Most of the friction points have identified solutions. But it's sometimes hard to know what feature is implemented where."
+        +"Most of the friction points have identified solutions in the form of RFCs. Some of them have made it to the spec (`@oneOf`, schema coordinates, ...). Others remain in experimental state."
+        +"As time passes, it's becoming harder and harder to tell what feature is implemented where."
       }
       p {
-        +"This site aims to document those solutions so we can move the ecosystem together."
+        +"This site aims to document those features so we can move the ecosystem together."
       }
     }
     div {
