@@ -4,18 +4,37 @@
   "description": "Facebook's framework for building React applications that talk to a GraphQL backend.",
   "url": "https://github.com/facebook/relay",
   "features": {
-    "capabilities": null,
-    "deprecated-objects": null,
-    "directives-on-directives": null,
-    "executable-documents-descriptions": null,
-    "fragment-arguments": null,
+    "capabilities": {
+      "since": "-"
+    },
+    "deprecated-objects": {
+      "since": "-"
+    },
+    "directives-on-directives": {
+      "since": "-"
+    },
+    "executable-documents-descriptions": {
+      "since": "-",
+      "note": "Merged but not yet released ([commit](https://github.com/facebook/relay/commit/f5b5e54c2043))"
+    },
+    "fragment-arguments": {
+      "since": "17.0.0",
+      "note": "Requires `enable_fragment_argument_transform` feature flag ([pr](https://github.com/facebook/relay/pull/4648))"
+    },
     "graphql-response+json": {
       "since": "n/a",
       "note": "Relay is transport agnostic ([doc](https://relay.dev/docs/guides/network-layer/))."
     },
-    "on-error": null,
-    "one-of": null,
-    "semantic-introspection": null,
+    "on-error": {
+      "since": "-"
+    },
+    "one-of": {
+      "since": "-",
+      "note": "Merged but not yet released ([pr](https://github.com/facebook/relay/pull/5108))"
+    },
+    "semantic-introspection": {
+      "since": "-"
+    },
     "semantic-non-null": {
       "since": "18.0.0",
       "note": "[doc](https://relay.dev/docs/guides/semantic-nullability/)"
