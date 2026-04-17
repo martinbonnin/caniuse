@@ -4,18 +4,41 @@
   "description": "Implementation-First GraphQL for TypeScript.",
   "url": "https://github.com/captbaritone/grats",
   "features": {
-    "capabilities": null,
-    "deprecated-objects": null,
-    "directives-on-directives": null,
-    "executable-documents-descriptions": null,
-    "fragment-arguments": null,
+    "capabilities": {
+      "since": "-",
+      "note": "Will be provided by GraphQL.js [pr](https://github.com/graphql/graphql-js/pull/4523)"
+    },
+    "deprecated-objects": {
+      "since": "0.0.23",
+      "note": "[doc](https://grats.capt.dev/docs/resolvers/deprecated/)"
+    },
+    "directives-on-directives": {
+      "since": "-",
+      "note": "Will be provided by GraphQL.js [pr](https://github.com/graphql/graphql-js/pull/4521)"
+    },
+    "executable-documents-descriptions": {
+      "since": "n/a",
+      "note": "Provided by GraphQL.js starting in version 16.12.0 [pr](https://github.com/graphql/graphql-js/pull/4482)"
+    },
+    "fragment-arguments": {
+      "since": "n/a",
+      "note": "Provided by GraphQL.js starting in version 17.0.0-alpha.8 [pr](https://github.com/graphql/graphql-js/pull/4015)"
+    },
     "graphql-response+json": {
       "since": "n/a",
       "note": "Grats is transport agnostic."
     },
-    "on-error": null,
-    "one-of": null,
-    "semantic-introspection": null,
+    "on-error": {
+      "since": "-",
+      "note": "Will be provided by GraphQL.js [pr](https://github.com/graphql/graphql-js/pull/4364)"
+    },
+    "one-of": {
+      "since": "0.0.32",
+      "note": "[doc](https://grats.capt.dev/docs/docblock-tags/oneof-inputs/)"
+    },
+    "semantic-introspection": {
+      "since": "-"
+    },
     "semantic-non-null": {
       "since": "0.0.12",
       "note": "[doc](https://grats.capt.dev/docs/guides/strict-semantic-nullability/), [commit](https://github.com/captbaritone/grats/commit/d4347092e81469a3920abc4a6750a5c4ca3f7b24)"
