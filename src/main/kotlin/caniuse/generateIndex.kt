@@ -32,7 +32,7 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
         +" improving the daily GraphQL experience."
       }
       p {
-        +"Most of the friction points have identified solutions in the form of RFCs. Some of them have made it to the spec (`@oneOf`, schema coordinates, ...). Others remain in experimental state."
+        +"Most of the friction points have identified solutions in the form of RFCs. Some of them have made it to the spec (`@oneOf`, schema coordinates, ...). Others remain in experimental state. "
         +"As time passes, it's becoming harder and harder to tell what feature is implemented where."
       }
       p {
