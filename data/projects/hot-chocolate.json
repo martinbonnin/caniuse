@@ -14,8 +14,12 @@
     "capabilities": {
       "since": "16.0.0"
     },
-    "deprecated-objects": null,
-    "directives-on-directives": null,
+    "deprecated-objects": {
+      "since": "-"
+    },
+    "directives-on-directives": {
+      "since": "-"
+    },
     "executable-documents-descriptions": {
       "since": "16.0.0",
       "note": "[pr](https://github.com/ChilliCream/graphql-platform/pull/8351)"
