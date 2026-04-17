@@ -36,7 +36,7 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
         +"As time passes, it's becoming harder and harder to tell what feature is implemented where."
       }
       p {
-        +"This site aims to document those features so we can move the ecosystem together."
+        +"Let's move the GraphQL ecosystem together!"
       }
     }
     div {
