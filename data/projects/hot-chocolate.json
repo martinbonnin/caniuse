@@ -25,10 +25,10 @@
     },
     "on-error": {
       "since": "16.0.0"
-    }
+    },
     "semantic-introspection": {
       "since": "16.0.0"
-    }
+    },
     "semantic-non-null": {
       "since": "14.0.0"
     }
