@@ -22,10 +22,12 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
       }
 
       p {
-        unsafe {
-
+        h2 {
+          +"Background"
         }
-        +"GraphQL is a wonderful piece of technology. The GraphQL spec has been a very solid foundation for the past 10 years. It's not (yet!) perfect though. In the past few years, the community has been "
+      }
+      p {
+        +"GraphQL is a wonderful piece of technology. The GraphQL spec has been a very solid foundation for the past 10 years. It's not (yet!) perfect though. Friction points exist and the community has been "
         a(href = "https://github.com/graphql/graphql-wg/", target = "blank") {
           +"hard at work"
         }
@@ -33,7 +35,9 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
       }
       p {
         +"Most of the friction points have identified solutions in the form of RFCs. Some of them have made it to the spec (`@oneOf`, schema coordinates, ...). Others remain in experimental state. "
-        +"As time passes, it's becoming harder and harder to tell what feature is implemented where."
+        +"As time passes, it's becoming harder and harder to tell what feature is implemented where. This website bridges that "
+        a(href = "https://github.com/graphql/gaps/") { +"gap" }
+        +"."
       }
       p {
         +"Let's move the GraphQL ecosystem together!"

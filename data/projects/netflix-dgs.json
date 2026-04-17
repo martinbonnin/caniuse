@@ -4,18 +4,42 @@
   "description": "The DGS Framework (Domain Graph Service) is a GraphQL server framework for Spring Boot, developed by Netflix.",
   "url": "https://github.com/netflix/dgs-framework",
   "features": {
-    "capabilities": null,
-    "deprecated-objects": null,
-    "directives-on-directives": null,
-    "executable-documents-descriptions": null,
-    "fragment-arguments": null,
+    "capabilities": {
+      "since": "-"
+    },
+    "deprecated-objects": {
+      "since": "-",
+      "note": "Requires GraphQL Java support"
+    },
+    "directives-on-directives": {
+      "since": "-",
+      "note": "Requires GraphQL Java support"
+    },
+    "executable-documents-descriptions": {
+      "since": "-",
+      "note": "Requires GraphQL Java support"
+    },
+    "fragment-arguments": {
+      "since": "-"
+    },
     "graphql-response+json": {
       "since": "n/a",
       "note": "Provided by Spring for GraphQL ([Discussion](https://github.com/Netflix/dgs-framework/discussions/1728))"
     },
-    "on-error": null,
-    "one-of": null,
-    "semantic-introspection": null,
-    "semantic-non-null": null
+    "on-error": {
+      "since": "-",
+      "note": "Requires GraphQL Java support"
+    },
+    "one-of": {
+      "since": "10.0.0",
+      "note": "Provided by GraphQL Java ([discussion](https://github.com/Netflix/dgs-framework/discussions/1642))"
+    },
+    "semantic-introspection": {
+      "since": "-"
+    },
+    "semantic-non-null": {
+      "since": "-",
+      "note": "[discussion](https://github.com/Netflix/dgs-framework/discussions/2213)"
+    }
   }
 }
