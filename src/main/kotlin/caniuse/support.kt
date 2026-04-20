@@ -17,13 +17,13 @@ object NotSupported : SupportStatus
 
 internal fun featureEntries(id: String, project: Project, features: Map<String, Feature>): List<SupportEntry> {
   return features.map { feature ->
-    project.features.get(feature.key).toSupportEntry(id, feature.value.name, "../feature/${feature.key}")
+    project.features.get(feature.key).toSupportEntry(id, feature.value.name, "../feature/${feature.key}.html")
   }.sortedBy { it.name }
 }
 
 internal fun projectEntries(id: String, projects: Map<String, Project>): List<SupportEntry> {
   return projects.map { project ->
-    project.value.features.get(id).toSupportEntry(id, project.value.name, "../project/${project.key}")
+    project.value.features.get(id).toSupportEntry(id, project.value.name, "../project/${project.key}.html")
   }.sortedBy { it.name }
 }
 

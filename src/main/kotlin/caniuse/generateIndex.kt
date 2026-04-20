@@ -55,7 +55,7 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
         sortedFeatures(features, projects).forEach {
           val supportedPercent = if (maxScore > 0) (it.supported * 100.0) / maxScore else 0.0
           val naPercent = if (maxScore > 0) (it.na * 100.0) / maxScore else 0.0
-          a(href = "feature/${it.id}") {
+          a(href = "feature/${it.id}.html") {
             classes = setOf("feature-bar")
             attributes["title"] = "${it.supported} supported, ${it.na} not applicable"
             div {
@@ -93,7 +93,7 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
         sortedProjects(features, projects).forEach {
           val supportedPercent = if (maxFeatures > 0) (it.supported * 100.0) / maxFeatures else 0.0
           val naPercent = if (maxFeatures > 0) (it.na * 100.0) / maxFeatures else 0.0
-          a(href = "project/${it.id}") {
+          a(href = "project/${it.id}.html") {
             classes = setOf("project-bar")
             attributes["title"] = "${it.supported} supported, ${it.na} not applicable"
             div {

@@ -28,7 +28,7 @@
     },
     "executable-documents-descriptions": {
       "since": "4.0.0",
-      "note": "This has been supported for a long time and there is no feature flag. Apollo Kotlin does not detect this as an erroro if a document were to include them."
+      "note": "This has been supported for a long time and there is no feature flag. Apollo Kotlin does not detect this as an error if a document were to include them."
     },
     "fragment-arguments": {
       "since": "5.0.0-alpha.5",
