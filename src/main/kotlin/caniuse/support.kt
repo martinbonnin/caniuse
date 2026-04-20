@@ -50,10 +50,10 @@ internal fun SupportInfo?.toSupportStatus(): SupportStatus {
 private fun SupportInfo?.toSupportEntry(id: String, name: String, link: String): SupportEntry {
   val status = toSupportStatus()
 
-  val note = if (this?.since == null) {
+  val note = if (status is Unknown) {
     "Know the status of this feature? [Let us know!](https://github.com/$repo/edit/main/data/projects/$id.json)"
   } else {
-    note
+    this?.note.orEmpty()
   }
 
   val label = when(status) {
