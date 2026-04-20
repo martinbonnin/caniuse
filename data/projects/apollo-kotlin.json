@@ -5,14 +5,16 @@
   "url": "https://github.com/apollographql/apollo-kotlin",
   "features": {
     "capabilities": {
-      "since": "5.0.0-alpha.5"
+      "since": "5.0.0-alpha.5",
+      "note": "[pr](https://github.com/apollographql/apollo-kotlin/pull/6858), experimental and not documented yet."
     },
     "graphql-response+json": {
       "since": "4.1.0",
       "note": "[Apollo Kotlin pull request](https://github.com/apollographql/apollo-kotlin/pull/6170)"
     },
     "on-error": {
-      "since": "5.0.0-alpha.5"
+      "since": "5.0.0-alpha.5",
+      "note": "[pr](https://github.com/apollographql/apollo-kotlin/pull/6860), experimental and not documented yet."
     },
     "one-of": {
       "since": "4.0.0"
@@ -21,19 +23,23 @@
       "since": "-"
     },
     "directives-on-directives": {
-      "since": "5.0.0-alpha.4"
+      "since": "5.0.0-alpha.4",
+      "note": "[pr](https://github.com/apollographql/apollo-kotlin/pull/6803), experimental, behind the `allowDirectivesOnDirectives` flag, and not documented yet."
     },
     "executable-documents-descriptions": {
-      "since": "4.0.0"
+      "since": "4.0.0",
+      "note": "This has been supported for a long time and there is no feature flag. Apollo Kotlin does not detect this as an erroro if a document were to include them."
     },
     "fragment-arguments": {
-      "since": "5.0.0-alpha.5"
+      "since": "5.0.0-alpha.5",
+      "note": "[pr](https://github.com/apollographql/apollo-kotlin/pull/6882), experimental and not documented yet."
     },
     "semantic-introspection": {
       "since": "-"
     },
     "semantic-non-null": {
-      "since": "4.0.0"
+      "since": "4.0.0",
+      "note": "[doc](https://www.apollographql.com/docs/kotlin/v5/advanced/nullability)"
     }
   }
 }
