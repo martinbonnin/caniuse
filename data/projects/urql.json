@@ -4,18 +4,42 @@
   "description": "A highly customizable and versatile GraphQL client with which you add on features like normalized caching as you grow.",
   "url": "https://github.com/FormidableLabs/urql",
   "features": {
-    "capabilities": null,
-    "deprecated-objects": null,
-    "directives-on-directives": null,
-    "executable-documents-descriptions": null,
-    "fragment-arguments": null,
+    "capabilities": {
+      "since": "?"
+    },
+    "deprecated-objects": {
+      "since": "?"
+    },
+    "directives-on-directives": {
+      "since": "?"
+    },
+    "executable-documents-descriptions": {
+      "since": "?"
+    },
+    "fragment-arguments": {
+      "since": "?"
+    },
     "graphql-response+json": {
       "since": "3.2.0",
       "note": "[pr](https://github.com/urql-graphql/urql/pull/3007)"
     },
-    "on-error": null,
-    "one-of": null,
-    "semantic-introspection": null,
-    "semantic-non-null": null
+    "on-error": {
+      "since": "?"
+    },
+    "one-of": {
+      "since": "?"
+    },
+    "semantic-introspection": {
+      "since": "?"
+    },
+    "semantic-non-null": {
+      "since": "?"
+    },
+    "defer": {
+      "since": "?"
+    },
+    "stream": {
+      "since": "?"
+    }
   }
 }

@@ -38,6 +38,12 @@
     "semantic-non-null": {
       "since": "18.0.0",
       "note": "[doc](https://relay.dev/docs/guides/semantic-nullability/)"
+    },
+    "defer": {
+      "since": "?"
+    },
+    "stream": {
+      "since": "?"
     }
   }
 }

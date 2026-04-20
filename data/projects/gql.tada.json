@@ -4,18 +4,42 @@
   "description": "Magical GraphQL query engine for TypeScript.",
   "url": "https://github.com/0no-co/gql.tada",
   "features": {
-    "capabilities": null,
-    "deprecated-objects": null,
-    "directives-on-directives": null,
-    "executable-documents-descriptions": null,
-    "fragment-arguments": null,
+    "capabilities": {
+      "since": "?"
+    },
+    "deprecated-objects": {
+      "since": "?"
+    },
+    "directives-on-directives": {
+      "since": "?"
+    },
+    "executable-documents-descriptions": {
+      "since": "?"
+    },
+    "fragment-arguments": {
+      "since": "?"
+    },
     "graphql-response+json": {
       "since": "n/a",
       "note": "gql.tada is transport agnostic"
     },
-    "on-error": null,
-    "one-of": null,
-    "semantic-introspection": null,
-    "semantic-non-null": null
+    "on-error": {
+      "since": "?"
+    },
+    "one-of": {
+      "since": "?"
+    },
+    "semantic-introspection": {
+      "since": "?"
+    },
+    "semantic-non-null": {
+      "since": "?"
+    },
+    "defer": {
+      "since": "?"
+    },
+    "stream": {
+      "since": "?"
+    }
   }
 }

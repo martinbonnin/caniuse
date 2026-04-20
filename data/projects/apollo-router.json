@@ -35,6 +35,13 @@
     },
     "semantic-non-null": {
       "since": "-"
+    },
+    "defer": {
+      "since": "1.8.0 (partial)",
+      "note": "[doc](https://www.apollographql.com/docs/graphos/routing/operations/defer). Apollo Router only supports `@defer` using the `incremental v0.1` protocol."
+    },
+    "stream": {
+      "since": "-"
     }
   }
 }

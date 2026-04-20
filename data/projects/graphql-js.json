@@ -41,6 +41,12 @@
     "semantic-non-null": {
       "since": "n/a",
       "note": "`@semanticNonNull` is not a built-in directive and will probably never be. It's only used as a transitional phase while tools migrate to `onError: NULL`."
+    },
+    "defer": {
+      "since": "?"
+    },
+    "stream": {
+      "since": "?"
     }
   }
 }

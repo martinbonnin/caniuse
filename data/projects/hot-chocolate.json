@@ -35,6 +35,12 @@
     },
     "semantic-non-null": {
       "since": "14.0.0"
+    },
+    "defer": {
+      "since": "?"
+    },
+    "stream": {
+      "since": "?"
     }
   }
 }

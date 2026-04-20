@@ -4,18 +4,42 @@
   "description": "Spring for GraphQL provides support for Spring applications built on GraphQL Java.",
   "url": "https://github.com/spring-projects/spring-graphql",
   "features": {
-    "capabilities": null,
-    "deprecated-objects": null,
-    "directives-on-directives": null,
-    "executable-documents-descriptions": null,
-    "fragment-arguments": null,
+    "capabilities": {
+      "since": "?"
+    },
+    "deprecated-objects": {
+      "since": "?"
+    },
+    "directives-on-directives": {
+      "since": "?"
+    },
+    "executable-documents-descriptions": {
+      "since": "?"
+    },
+    "fragment-arguments": {
+      "since": "?"
+    },
     "graphql-response+json": {
       "since": "1.4.0",
       "note": "[doc](https://docs.spring.io/spring-graphql/reference/transports.html), [commit](https://github.com/spring-projects/spring-graphql/commit/c5fef9b4ab4bcd3d79a5617534298fe249b95211)"
     },
-    "on-error": null,
-    "one-of": null,
-    "semantic-introspection": null,
-    "semantic-non-null": null
+    "on-error": {
+      "since": "?"
+    },
+    "one-of": {
+      "since": "?"
+    },
+    "semantic-introspection": {
+      "since": "?"
+    },
+    "semantic-non-null": {
+      "since": "?"
+    },
+    "defer": {
+      "since": "?"
+    },
+    "stream": {
+      "since": "?"
+    }
   }
 }

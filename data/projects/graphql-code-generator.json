@@ -4,23 +4,43 @@
   "description": "GraphQL code generator with flexible support for custom plugins and templates like Typescript (frontend and backend), React Hooks, resolvers signatures and more.",
   "url": "https://github.com/dotansimha/graphql-code-generator",
   "features": {
-    "capabilities": null,
-    "deprecated-objects": null,
-    "directives-on-directives": null,
-    "executable-documents-descriptions": null,
-    "fragment-arguments": null,
+    "capabilities": {
+      "since": "?"
+    },
+    "deprecated-objects": {
+      "since": "?"
+    },
+    "directives-on-directives": {
+      "since": "?"
+    },
+    "executable-documents-descriptions": {
+      "since": "?"
+    },
+    "fragment-arguments": {
+      "since": "?"
+    },
     "graphql-response+json": {
       "since": "n/a",
       "note": "GraphQL code generator does not deal with transport concerns."
     },
-    "on-error": null,
-    "one-of": null,
+    "on-error": {
+      "since": "?"
+    },
+    "one-of": {
+      "since": "?"
+    },
     "semantic-introspection": {
       "since": "n/a"
     },
     "semantic-non-null": {
       "since": "4.6.0",
       "note": "[pr](https://github.com/dotansimha/graphql-code-generator/pull/10315), [release](https://github.com/dotansimha/graphql-code-generator/releases/tag/release-1743074721096)"
+    },
+    "defer": {
+      "since": "?"
+    },
+    "stream": {
+      "since": "?"
     }
   }
 }

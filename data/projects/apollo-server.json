@@ -8,14 +8,38 @@
       "since": "13.0.0",
       "note": "[Apollo Server pull request](https://github.com/apollographql/apollo-server/pull/6827)"
     },
-    "capabilities": null,
-    "deprecated-objects": null,
-    "directives-on-directives": null,
-    "executable-documents-descriptions": null,
-    "fragment-arguments": null,
-    "on-error": null,
-    "one-of": null,
-    "semantic-introspection": null,
-    "semantic-non-null": null
+    "capabilities": {
+      "since": "?"
+    },
+    "deprecated-objects": {
+      "since": "?"
+    },
+    "directives-on-directives": {
+      "since": "?"
+    },
+    "executable-documents-descriptions": {
+      "since": "?"
+    },
+    "fragment-arguments": {
+      "since": "?"
+    },
+    "on-error": {
+      "since": "?"
+    },
+    "one-of": {
+      "since": "?"
+    },
+    "semantic-introspection": {
+      "since": "?"
+    },
+    "semantic-non-null": {
+      "since": "?"
+    },
+    "defer": {
+      "since": "?"
+    },
+    "stream": {
+      "since": "?"
+    }
   }
 }

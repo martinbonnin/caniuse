@@ -40,6 +40,12 @@
     "semantic-non-null": {
       "since": "-",
       "note": "[discussion](https://github.com/Netflix/dgs-framework/discussions/2213)"
+    },
+    "defer": {
+      "since": "?"
+    },
+    "stream": {
+      "since": "?"
     }
   }
 }

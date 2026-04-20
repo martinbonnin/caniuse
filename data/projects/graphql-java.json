@@ -11,16 +11,36 @@
     "one-of": {
       "since": "21.2"
     },
-    "capabilities": null,
-    "deprecated-objects": null,
-    "directives-on-directives": null,
+    "capabilities": {
+      "since": "?"
+    },
+    "deprecated-objects": {
+      "since": "?"
+    },
+    "directives-on-directives": {
+      "since": "?"
+    },
     "executable-documents-descriptions": {
       "since": "-",
       "note": "[issue](https://github.com/graphql-java/graphql-java/issues/4077)"
     },
-    "fragment-arguments": null,
-    "on-error": null,
-    "semantic-introspection": null,
-    "semantic-non-null": null
+    "fragment-arguments": {
+      "since": "?"
+    },
+    "on-error": {
+      "since": "?"
+    },
+    "semantic-introspection": {
+      "since": "?"
+    },
+    "semantic-non-null": {
+      "since": "?"
+    },
+    "defer": {
+      "since": "?"
+    },
+    "stream": {
+      "since": "?"
+    }
   }
 }
