@@ -23,7 +23,7 @@
       "since": "-"
     },
     "directives-on-directives": {
-      "since": "5.0.0-alpha.4 (partial)",
+      "since": "5.0.0-alpha.4",
       "note": "[pr](https://github.com/apollographql/apollo-kotlin/pull/6803), experimental, behind the `allowDirectivesOnDirectives` flag, and not documented yet."
     },
     "executable-documents-descriptions": {
