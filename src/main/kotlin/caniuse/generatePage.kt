@@ -36,6 +36,7 @@ internal fun HTMLTag.markdown(markdown: String) {
 }
 
 internal fun generatePage(
+  title: String,
   features: Map<String, Feature>,
   projects: Map<String, Project>,
   pathPrefix: String = "",
@@ -44,7 +45,7 @@ internal fun generatePage(
   return createHTML().html {
     head {
       meta(name = "viewport", content = "width=device-width, initial-scale=1")
-      title("Can I Use ... in GraphQL?")
+      title(title)
       link(rel = "icon", type = "image/svg+xml", href = "${pathPrefix}caniuse.svg")
       link(rel = "stylesheet", href = "${pathPrefix}pagefind/pagefind-ui.css")
       link(rel = "stylesheet", href = "${pathPrefix}style.css")

@@ -3,7 +3,7 @@ package caniuse
 import kotlinx.html.*
 
 fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>): String {
-  return generatePage(features = features, projects = projects) {
+  return generatePage(title = "Can I Use ... in GraphQL?", features = features, projects = projects) {
     div {
       h1 { +"Can I use ... in GraphQL ?" }
       p {

@@ -4,7 +4,7 @@ import kotlinx.html.*
 
 
 fun generateFeature(id: String, feature: Feature, features: Map<String, Feature>, projects: Map<String, Project>): String {
-  return generatePage(features = features, projects = projects, pathPrefix = "../") {
+  return generatePage(title = "Can I Use ${feature.name}?", features = features, projects = projects, pathPrefix = "../") {
     h1 { +feature.name }
     if (feature.experimental) {
       span {
