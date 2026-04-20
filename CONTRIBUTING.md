@@ -14,7 +14,8 @@ Edit the project file in `data/projects/<project-id>.json` and add an entry to t
 {
   "features": {
     "feature-id": {
-      "since": "1.2.0"
+      "since": "1.2.0",
+      "note": "[doc](https://example.com/doc)"
     }
   }
 }
@@ -26,6 +27,7 @@ Each feature entry supports the following fields:
 
 - `since` — the first version that supports the feature or one of the special values:
   - `-` if not supported
+  - `partial` if partially supported (use "note")
   - `n/a` if not applicable 
   - `?` if unknown
 - `note` (optional) — any clarification about the support (Markdown is supported).
@@ -65,17 +67,69 @@ Create a new file `data/features/<feature-id>.json`:
 
 Then add support entries for this feature in the relevant project files.
 
+## Scoring
+
+The projects are sorted on the main page by depending on their unsupported features. The fewer unsupported features, the better the overall score.
+
+The aim is to showcase projects that track the latest spec changes and RFCs.
+
+We recognize that projects have very different surfaces and not every feature applies to every project. For this reason, features that do not apply to a given project are counted as supported for the overall score.
+
+If a feature is provided tranparently by another project, mark it as supported by adding "since" and link to the project in the note:
+
+```json5
+{
+  "features": {
+    // This project relies on GraphQL.js handling of fragment arguments.
+    "fragment-arguments": {
+      "since": "1.2.0",
+      "note": "Provided by [GraphQL.js](../graphql-js)"
+    }
+  }
+}
+```
+
+If a feature does not apply, mark it as `n/a` with a comment in the note:
+
+```json5
+{
+  "features": {
+    // This feature does not apply to this project.
+    "graphql-response+json": {
+      "since": "n/a",
+      "note": "This project is transport agnostic"
+    }
+  }
+}
+```
+
+Sometimes a feature is provided by another project at a higher version than the one pulled transitively:
+
+```json5
+{
+  "features": {
+    // Upgrade GraphQL.js to 16.12.0 to use fragment arguments
+    "fragment-arguments": {
+      "since": "n/a",
+      "note": "Provided by [GraphQL.js](../graphql-js) starting with 16.12.0"
+    }
+  }
+}
+```
+
+Because `n/a` features are not "unsupported", they count toward the overall score. They do serve as a secondary sort, though: if two projects have the same overall score, the one with the less `n/a` scores higher. 
+
+
 ## Building the site locally
 
 ```bash
-./gradlew buildSite
+./gradlew buildSite # requires a JVM installed
 ```
 
 The generated site is in `build/site/`.
 
 ## Guidelines
 
-- Keep descriptions concise.
-- Use the project's official name.
-- Link to the relevant spec or proposal via the feature's `url` field.
+- For new features and projects, link to the relevant spec or proposal via the feature's `url` field.
+- For support information, try to include a note do the documentation and/or pull request.
 - When in doubt, open an issue or a draft PR — we're happy to help!

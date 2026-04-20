@@ -34,13 +34,13 @@ fun main(args: Array<String>) {
     val projectDir = outputDir.resolve("project")
     projectDir.mkdirs()
     projects.forEach { (id, project) ->
-        projectDir.resolve("$id.html").writeText(generateProject(id, project, features, projects))
+        projectDir.resolve(id).writeText(generateProject(id, project, features, projects))
     }
 
     val featureDir = outputDir.resolve("feature")
     featureDir.mkdirs()
     features.forEach { (id, feature) ->
-        featureDir.resolve("$id.html").writeText(generateFeature(id, feature, features, projects))
+        featureDir.resolve(id).writeText(generateFeature(id, feature, features, projects))
     }
 
     println("Loaded ${projects.size} projects and ${features.size} features")
