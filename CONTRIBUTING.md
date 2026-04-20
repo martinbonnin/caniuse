@@ -119,6 +119,25 @@ Sometimes a feature is provided by another project at a higher version than the 
 
 Because `n/a` features are not "unsupported", they count toward the overall score. They do serve as a secondary sort, though: if two projects have the same overall score, the one with the less `n/a` scores higher. 
 
+## Project types
+
+Valid values for `type` are:
+
+* **implementation**: an implementation of the GraphQL specification, including parser, validation, and execution. Those projects are network agnostic.
+  * Examples: `GraphQL.js`, `GraphQL Java`, `Apollo Kotlin`, `Hot Chocolate`
+* **schema builder**: a schema builder builds an executable schema. Schema builders can be implementation-first or SDL first.
+  * Examples: `Grats`, `GraphQL Kotlin`, `Hot Chocolate`
+* **server**: a server deals with the network. 
+  * Examples: `GraphQL Yoga`, `Apollo Server`, `Hot Chocolate`
+* **client**: a client makes requests to a server, optionally caches them. Some clients have APIs to customize their network layer.
+  * Examples: `Apollo Client`, `urql`, `Relay`
+* **code generator**: a code generator generates code and types from operations and/or servers.
+  * Examples: `GraphQL code generator`, `Apollo iOS`, `DGS`
+* **gateway**: a gateway composes subgraphs into a supergraph, often adding observability, and/or caching.
+  * Examples: `TheGuild Hive`, `Wundergraph Cosmo`, `Chillicream Fusion`, `Apollo Router`
+* **IDE**: an IDE allows executing and debugging GraphQL requests. 
+  * Examples: `GraphiQL`, `Playground`, `Laboratory`, `Sandbox`
+* **tool**: everything else! 
 
 ## Building the site locally
 
