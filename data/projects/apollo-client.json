@@ -42,7 +42,7 @@
     },
     "stream": {
       "since": "4.1",
-      "note": "Apollo Client supports `@stream` using both `incremental v0.1` and `incremental v0.2` since 4.1. The protocol needs explicit opt-it ([blog post](https://www.apollographql.com/blog/stream-all-the-things-with-apollo-client-4-1))",
+      "note": "Apollo Client supports `@stream` using both `incremental v0.1` and `incremental v0.2` since 4.1. The protocol needs explicit opt-it ([blog post](https://www.apollographql.com/blog/stream-all-the-things-with-apollo-client-4-1))"
     }
   }
 }
