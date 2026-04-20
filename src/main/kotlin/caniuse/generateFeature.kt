@@ -13,7 +13,7 @@ fun generateFeature(id: String, feature: Feature, features: Map<String, Feature>
         +"EXPERIMENTAL"
       }
     }
-    p { +feature.description }
+    p { markdown(feature.description) }
     if (feature.url != null) {
       p {
         b { +"More info: " }
