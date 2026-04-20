@@ -197,6 +197,7 @@ h1 + .tag-experimental {
 }
 .support-table td.support-yes,
 .support-table td.support-no,
+.support-table td.support-partial,
 .support-table td.support-unknown {
   color: #000;
   text-align: center;
@@ -204,6 +205,9 @@ h1 + .tag-experimental {
 }
 .support-table td.support-yes {
   background: #a8d5a2;
+}
+.support-table td.support-partial {
+  background: #f0e68c;
 }
 .support-table td.support-no {
   background: #f0a0a0;

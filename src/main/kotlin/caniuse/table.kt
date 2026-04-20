@@ -39,6 +39,7 @@ internal fun FlowContent.appendTable(columnName: String, entries: List<SupportEn
                 is Unknown ->  "support-unknown"
                 is NotApplicable ->  "support-unknown"
                 is Supported -> "support-yes"
+                is Partial -> "support-partial"
                 else -> "support-no"
               }
             )

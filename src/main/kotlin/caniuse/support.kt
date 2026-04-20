@@ -10,6 +10,7 @@ internal class SupportEntry(
 
 sealed interface SupportStatus
 class Supported(val version: String) : SupportStatus
+class Partial(val version: String) : SupportStatus
 object NotApplicable : SupportStatus
 object Unknown : SupportStatus
 object NotSupported : SupportStatus
@@ -26,6 +27,12 @@ internal fun projectEntries(id: String, projects: Map<String, Project>): List<Su
   }.sortedBy { it.name }
 }
 
+internal fun SupportStatus?.score(): Double = when(this) {
+  is Partial -> 0.5
+  is Supported -> 1.0
+  else -> 0.0
+}
+
 internal fun SupportInfo?.toSupportStatus(): SupportStatus {
   return if (this?.since == null || since == "?") {
     Unknown
@@ -33,6 +40,8 @@ internal fun SupportInfo?.toSupportStatus(): SupportStatus {
     NotApplicable
   } else if (since == "-") {
     NotSupported
+  } else if (since.endsWith("(partial)")) {
+    Partial(since.removeSuffix("(partial)").trim())
   } else {
     Supported(since)
   }
@@ -47,15 +56,14 @@ private fun SupportInfo?.toSupportEntry(id: String, name: String, link: String):
     note
   }
 
-  val label = if (this?.since == null || since == "?") {
-    "?"
-  } else if (since == "n/a") {
-    "N/A"
-  } else if (since == "-") {
-    "-"
-  } else {
-    since
+  val label = when(status) {
+    NotApplicable -> "N/A"
+    NotSupported -> "-"
+    is Partial -> status.version
+    is Supported -> status.version
+    Unknown -> "?"
   }
+
   return SupportEntry(
     link,
     name,

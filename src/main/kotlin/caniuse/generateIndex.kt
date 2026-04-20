@@ -132,7 +132,7 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
 private class DisplayProject(
   val id: String,
   val name: String,
-  val supported: Int,
+  val supported: Double,
   val na: Int
 ) {
   val total = supported + na
@@ -141,7 +141,7 @@ private class DisplayProject(
 private class DisplayFeature(
   val id: String,
   val name: String,
-  val supported: Int,
+  val supported: Double,
   val na: Int,
   val experimental: Boolean
 ) {
@@ -153,11 +153,11 @@ private fun sortedProjects(features: Map<String, Feature>, projects: Map<String,
     DisplayProject(
       project.key,
       project.value.name,
-      project.value.features.count {
+      project.value.features.entries.sumOf {
         if (!features.keys.contains(it.key)) {
           error("Unkown feature ${it.key} in project ${project.key}, please double check ${project.key}.json")
         }
-        it.value?.toSupportStatus() is Supported
+        it.value?.toSupportStatus().score()
       },
       project.value.features.count {
         it.value?.toSupportStatus() is NotApplicable
@@ -180,8 +180,8 @@ private fun sortedFeatures(features: Map<String, Feature>, projects: Map<String,
     DisplayFeature(
       feature.key,
       feature.value.name,
-      projects.values.count {
-        it.features.get(feature.key).toSupportStatus() is Supported
+      projects.values.sumOf {
+        it.features.get(feature.key).toSupportStatus().score()
       },
       projects.values.count {
         it.features.get(feature.key).toSupportStatus() is NotApplicable
