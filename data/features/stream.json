@@ -1,6 +1,6 @@
 {
   "name": "'@stream'",
-  "description": "The `@stream` directive allows you to stream array items incrementally from your GraphQL server.",
+  "description": "The `@stream` directive allows you to stream array items incrementally from your GraphQL server.\n\nThere are several versions of the incremental protocol used by `@defer`. The [latest protocol](https://specs.apollo.dev/incremental/v0.2/#sec-Accept) uses `multipart/mixed;incrementalSpec=v0.2` as the `Accept` header. The [previous one](https://specs.apollo.dev/incremental/v0.1/#sec-Accept) used `multipart/mixed;deferSpec=20220824` as the `Accept` header.",
   "url": "https://specs.apollo.dev/incremental/v0.2/#sec--@stream-",
   "experimental": true
 }

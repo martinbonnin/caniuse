@@ -1,6 +1,6 @@
 {
   "name": "'@defer'",
-  "description": "The `@defer` directive enables your queries to receive data for specific fields incrementally, instead of receiving all field data at the same time. This is helpful whenever some fields in a query take much longer to resolve than others.",
+  "description": "The `@defer` directive enables your queries to receive data for specific fields incrementally, instead of receiving all field data at the same time. This is helpful whenever some fields in a query take much longer to resolve than others.\n\nThere are several versions of the incremental protocol used by `@defer`. The [latest protocol](https://specs.apollo.dev/incremental/v0.2/#sec-Accept) uses `multipart/mixed;incrementalSpec=v0.2` as the `Accept` header. The [previous one](https://specs.apollo.dev/incremental/v0.1/#sec-Accept) used `multipart/mixed;deferSpec=20220824` as the `Accept` header.",
   "url": "https://specs.apollo.dev/incremental/v0.2/#sec--@defer-",
   "experimental": true
 }
