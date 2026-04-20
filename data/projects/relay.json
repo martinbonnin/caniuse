@@ -40,10 +40,12 @@
       "note": "[doc](https://relay.dev/docs/guides/semantic-nullability/)"
     },
     "defer": {
-      "since": "?"
+      "since": "15.0.0 (partial)",
+      "note": "Relay does not support the latest version of the incremental protocol ([issue](https://github.com/facebook/relay/issues/5081))"
     },
     "stream": {
-      "since": "?"
+      "since": "15.0.0 (partial)",
+      "note": "Relay does not support the latest version of the incremental protocol ([issue](https://github.com/facebook/relay/issues/5081))"
     }
   }
 }

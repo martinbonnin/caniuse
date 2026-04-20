@@ -44,10 +44,12 @@
       "note": "[doc](https://grats.capt.dev/docs/guides/strict-semantic-nullability/), [commit](https://github.com/captbaritone/grats/commit/d4347092e81469a3920abc4a6750a5c4ca3f7b24)"
     },
     "defer": {
-      "since": "?"
+      "since": "n/a",
+      "note": "`@defer` is provided by the server"
     },
     "stream": {
-      "since": "?"
+      "since": "n/a",
+      "note": "`@stream` is provided by the server"
     }
   }
 }
