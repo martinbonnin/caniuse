@@ -1,0 +1,6 @@
+{
+  "name": "'@stream'",
+  "description": "The `@stream` directive allows you to stream array items incrementally from your GraphQL server.",
+  "url": "https://specs.apollo.dev/incremental/v0.2/#sec--@stream-",
+  "experimental": true
+}

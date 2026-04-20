@@ -40,6 +40,14 @@
     },
     "semantic-non-null": {
       "since": "-"
+    },
+    "defer": {
+      "since": "1.14.0 (partial)",
+      "note": "Apollo iOS only supports the [`incremental:0.1` spec](https://specs.apollo.dev/incremental/v0.1/) ([doc](https://www.apollographql.com/docs/ios/fetching/defer))"
+    },
+    "stream": {
+      "since": "-",
+      "note": "[issue](https://github.com/apollographql/apollo-ios/issues/2269)"
     }
   }
 }
