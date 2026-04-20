@@ -37,10 +37,12 @@
       "since": "14.0.0"
     },
     "defer": {
-      "since": "?"
+      "since": "16.0.0",
+      "note": "[doc](https://chillicream.com/docs/hotchocolate/v16/server/http-transport#incremental-delivery-defer--stream)"
     },
     "stream": {
-      "since": "?"
+      "since": "16.0.0",
+      "note": "[doc](https://chillicream.com/docs/hotchocolate/v16/server/http-transport#incremental-delivery-defer--stream)"
     }
   }
 }
