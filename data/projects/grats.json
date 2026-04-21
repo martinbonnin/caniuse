@@ -9,8 +9,8 @@
       "note": "Will be provided by [GraphQL.js](graphql-js) [pr](https://github.com/graphql/graphql-js/pull/4523)"
     },
     "deprecated-objects": {
-      "since": "0.0.23",
-      "note": "[doc](https://grats.capt.dev/docs/resolvers/deprecated/)"
+      "since": "-",
+      "note": ""
     },
     "directives-on-directives": {
       "since": "-",
