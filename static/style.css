@@ -154,19 +154,6 @@ h1 + .tag-experimental {
   background: #e535ab;
   cursor: help;
 }
-.tag-experimental-small {
-  display: inline-block;
-  margin-left: 0.4em;
-  padding: 0 0.35em;
-  font-size: 0.7em;
-  font-weight: 700;
-  line-height: 1.5;
-  color: #fff;
-  background: #e535ab;
-  cursor: help;
-  text-decoration: none;
-  vertical-align: middle;
-}
 
 /* Support table */
 .support-table {

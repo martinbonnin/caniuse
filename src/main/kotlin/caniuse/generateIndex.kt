@@ -71,9 +71,7 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
               +it.name
               if (it.experimental) {
                 span {
-                  classes = setOf("tag-experimental-small")
-                  attributes["title"] = "This feature has not been merged in a specification draft yet"
-                  +"🧪"
+                  attributes["title"] = "This feature has not been merged in a specification draft yet" + "🧪"
                 }
               }
             }
