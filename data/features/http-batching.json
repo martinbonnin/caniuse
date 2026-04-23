@@ -1,0 +1,6 @@
+{
+  "name": "HTTP batching",
+  "description": "HTTP batching allows you to send multiple GraphQL operations or variables in a single HTTP request. This can reduce the number of round trips between the client and server, improving performance in certain scenarios.",
+  "url": "https://github.com/graphql/graphql-over-http/pull/307",
+  "experimental": true
+}
