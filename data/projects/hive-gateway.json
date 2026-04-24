@@ -1,0 +1,51 @@
+{
+  "name": "Hive Gateway",
+  "type": "gateway",
+  "description": "Fully open-source, MIT-licensed GraphQL router that can act as a GraphQL Federation gateway, a subgraph or a proxy gateway for any GraphQL API service.",
+  "url": "https://the-guild.dev/graphql/hive/gateway",
+  "features": {
+    "graphql-response+json": {
+      "since": "1.0.0"
+    },
+    "capabilities": {
+      "since": "-"
+    },
+    "deprecated-objects": {
+      "since": "-"
+    },
+    "directives-on-directives": {
+      "since": "-"
+    },
+    "executable-documents-descriptions": {
+      "since": "-"
+    },
+    "fragment-arguments": {
+      "since": "-"
+    },
+    "on-error": {
+      "since": "-"
+    },
+    "one-of": {
+      "since": "1.0.0",
+      "note": "Requires the envelop extended validation plugin. [Read more.](https://github.com/graphql-hive/graphql-yoga/blob/main/packages/envelop/plugins/extended-validation/README.md"
+    },
+    "semantic-introspection": {
+      "since": "-"
+    },
+    "semantic-non-null": {
+      "since": "-"
+    },
+    "defer": {
+      "since": "1.0.0",
+      "note": "[Read more.](https://the-guild.dev/graphql/hive/docs/gateway/defer-stream)"
+    },
+    "stream": {
+      "since": "1.0.0",
+      "note": "[Read more.](https://the-guild.dev/graphql/hive/docs/gateway/defer-stream)"
+    },
+    "http-batching": {
+      "since": "1.0.0",
+      "note": "[Read more.](https://the-guild.dev/graphql/hive/docs/gateway/other-features/performance/request-batching)"
+    }
+  }
+}
