@@ -42,6 +42,12 @@
     "stream": {
       "since": "5.1.0",
       "note": "`@stream` support requires `graphql-js:17.0.0-alpha.9` ([doc](https://www.apollographql.com/docs/apollo-server/workflow/requests#incremental-delivery-experimental))"
+    },
+    "field-extensions": {
+      "since": "?"
+    },
+    "http-batching": {
+      "since": "?"
     }
   }
 }

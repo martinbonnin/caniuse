@@ -50,6 +50,12 @@
     "stream": {
       "since": "n/a",
       "note": "`@stream` is provided by the server"
+    },
+    "field-extensions": {
+      "since": "?"
+    },
+    "http-batching": {
+      "since": "?"
     }
   }
 }

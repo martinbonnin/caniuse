@@ -46,6 +46,9 @@
     "http-batching": {
       "since": "2.6.0",
       "note": "[doc](https://www.apollographql.com/docs/graphos/routing/performance/query-batching)"
+    },
+    "field-extensions": {
+      "since": "?"
     }
   }
 }

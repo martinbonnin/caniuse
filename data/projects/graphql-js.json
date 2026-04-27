@@ -47,6 +47,12 @@
     },
     "stream": {
       "since": "?"
+    },
+    "field-extensions": {
+      "since": "?"
+    },
+    "http-batching": {
+      "since": "?"
     }
   }
 }

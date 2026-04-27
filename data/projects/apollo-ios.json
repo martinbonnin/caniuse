@@ -48,6 +48,12 @@
     "stream": {
       "since": "-",
       "note": "[issue](https://github.com/apollographql/apollo-ios/issues/2269)"
+    },
+    "field-extensions": {
+      "since": "?"
+    },
+    "http-batching": {
+      "since": "?"
     }
   }
 }

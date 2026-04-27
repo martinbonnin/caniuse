@@ -46,6 +46,12 @@
     "stream": {
       "since": "15.0.0 (partial)",
       "note": "Relay does not support the latest version of the incremental protocol ([issue](https://github.com/facebook/relay/issues/5081))"
+    },
+    "field-extensions": {
+      "since": "?"
+    },
+    "http-batching": {
+      "since": "?"
     }
   }
 }

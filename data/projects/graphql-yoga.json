@@ -47,6 +47,9 @@
     "http-batching": {
       "since": "3.0.0",
       "note": "[Read more.](https://the-guild.dev/graphql/yoga-server/docs/features/request-batching)"
+    },
+    "field-extensions": {
+      "since": "?"
     }
   }
 }

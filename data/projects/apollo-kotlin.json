@@ -8,6 +8,10 @@
       "since": "5.0.0-alpha.5",
       "note": "[pr](https://github.com/apollographql/apollo-kotlin/pull/6858), experimental and not documented yet."
     },
+    "field-extensions": {
+      "since": "5.0.0-alpha.5",
+      "note": "[pr](https://github.com/apollographql/apollo-kotlin/pull/6856), experimental and not documented yet."
+    },
     "graphql-response+json": {
       "since": "4.1.0",
       "note": "[Apollo Kotlin pull request](https://github.com/apollographql/apollo-kotlin/pull/6170)"
@@ -48,6 +52,9 @@
     "stream": {
       "since": "5.0.0-alpha.3",
       "note": "[pr](https://github.com/apollographql/apollo-kotlin/pull/6331), [doc](https://www.apollographql.com/docs/kotlin/v5/fetching/defer)"
+    },
+    "http-batching": {
+      "since": "?"
     }
   }
 }

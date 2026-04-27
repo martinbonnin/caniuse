@@ -46,6 +46,9 @@
     "http-batching": {
       "since": "1.0.0",
       "note": "[Read more.](https://the-guild.dev/graphql/hive/docs/gateway/other-features/performance/request-batching)"
+    },
+    "field-extensions": {
+      "since": "?"
     }
   }
 }
