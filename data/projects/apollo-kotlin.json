@@ -54,7 +54,8 @@
       "note": "[pr](https://github.com/apollographql/apollo-kotlin/pull/6331), [doc](https://www.apollographql.com/docs/kotlin/v5/fetching/defer)"
     },
     "http-batching": {
-      "since": "?"
+      "since": "4.0.0 (partial)",
+      "note": "Apollo Kotlin support operation batching using the [Apollo format](https://www.apollographql.com/docs/graphos/routing/performance/query-batching#query-batch-formats). Variable batching is not supported."
     }
   }
 }
