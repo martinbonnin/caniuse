@@ -55,7 +55,7 @@
     },
     "http-batching": {
       "since": "4.0.0 (partial)",
-      "note": "Apollo Kotlin support operation batching using the [Apollo format](https://www.apollographql.com/docs/graphos/routing/performance/query-batching#query-batch-formats). Variable batching is not supported."
+      "note": "Apollo Kotlin supports operation batching using the [Apollo format](https://www.apollographql.com/docs/graphos/routing/performance/query-batching#query-batch-formats). Variable batching is not supported."
     }
   }
 }
