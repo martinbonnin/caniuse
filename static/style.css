@@ -121,16 +121,6 @@ main {
 @media (max-width: 900px) {
   #sidebar { display: none; }
 }
-#columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-@media (max-width: 600px) {
-  #columns {
-    grid-template-columns: 1fr;
-  }
-}
 a { color: var(--color-link); }
 
 /* Footnote */

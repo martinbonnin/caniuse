@@ -41,87 +41,68 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
       }
     }
     div {
-      id = "columns"
-      div {
-        h2 { +"Features" }
-        p {
-          +"All features sorted by the number of projects that support them.*"
-        }
-
-        val maxScore = projects.size
-        sortedFeatures(features, projects).forEach {
-          val supportedPercent = if (maxScore > 0) (it.supported * 100.0) / maxScore else 0.0
-          val naPercent = if (maxScore > 0) (it.na * 100.0) / maxScore else 0.0
-          a(href = "feature/${it.id}.html") {
-            classes = setOf("feature-bar")
-            attributes["title"] = "${it.supported} supported, ${it.na} not applicable"
-            div {
-              classes = setOf("feature-bar-fill")
-              style = "width: ${supportedPercent}%"
-            }
-            div {
-              classes = setOf("feature-bar-fill-na")
-              style = "left: ${supportedPercent}%; width: ${naPercent}%"
-            }
-            span {
-              classes = setOf("feature-bar-label")
-              +it.name
-            }
-            if (it.experimental) {
-              span {
-                classes = setOf("feature-bar-experimental")
-                attributes["title"] = "This feature has not been merged in a specification draft yet"
-                +"🧪"
-              }
-            }
-            span {
-              classes = setOf("feature-bar-score")
-              +"${it.total} / $maxScore"
-            }
+      h2 { +"Projects" }
+      val maxFeatures = features.size
+      sortedProjects(features, projects).forEach {
+        val supportedPercent = if (maxFeatures > 0) (it.supported * 100.0) / maxFeatures else 0.0
+        val naPercent = if (maxFeatures > 0) (it.na * 100.0) / maxFeatures else 0.0
+        a(href = "project/${it.id}.html") {
+          classes = setOf("project-bar")
+          attributes["title"] = "${it.supported} supported, ${it.na} not applicable"
+          div {
+            classes = setOf("project-bar-fill")
+            style = "width: ${supportedPercent}%"
           }
-        }
-      }
-      div {
-        h2 { +"Projects" }
-        p {
-          +"All projects sorted by the number of features they support.*"
-        }
-        val maxFeatures = features.size
-        sortedProjects(features, projects).forEach {
-          val supportedPercent = if (maxFeatures > 0) (it.supported * 100.0) / maxFeatures else 0.0
-          val naPercent = if (maxFeatures > 0) (it.na * 100.0) / maxFeatures else 0.0
-          a(href = "project/${it.id}.html") {
-            classes = setOf("project-bar")
-            attributes["title"] = "${it.supported} supported, ${it.na} not applicable"
-            div {
-              classes = setOf("project-bar-fill")
-              style = "width: ${supportedPercent}%"
-            }
-            div {
-              classes = setOf("project-bar-fill-na")
-              style = "left: ${supportedPercent}%; width: ${naPercent}%"
-            }
-            span {
-              classes = setOf("project-bar-label")
-              +it.name
-            }
-            span {
-              classes = setOf("project-bar-score")
-              +"${it.total} / $maxFeatures"
-            }
+          div {
+            classes = setOf("project-bar-fill-na")
+            style = "left: ${supportedPercent}%; width: ${naPercent}%"
+          }
+          span {
+            classes = setOf("project-bar-label")
+            +it.name
+          }
+          span {
+            classes = setOf("project-bar-score")
+            +"${it.total} / $maxFeatures"
           }
         }
       }
     }
-    p {
-      classes = setOf("footnote")
-      +"* Because not all features make sense for all projects, and to be fair to projects with a narrower scope, the total score includes features that are not applicable. For an example, graphql-js is not concerned about "
-      code {
-        +"application/graphql-response+json"
+    div {
+      h2 { +"Features" }
+
+      val maxScore = projects.size
+      sortedFeatures(features, projects).forEach {
+        val supportedPercent = if (maxScore > 0) (it.supported * 100.0) / maxScore else 0.0
+        val naPercent = if (maxScore > 0) (it.na * 100.0) / maxScore else 0.0
+        a(href = "feature/${it.id}.html") {
+          classes = setOf("feature-bar")
+          attributes["title"] = "${it.supported} supported, ${it.na} not applicable"
+          div {
+            classes = setOf("feature-bar-fill")
+            style = "width: ${supportedPercent}%"
+          }
+          div {
+            classes = setOf("feature-bar-fill-na")
+            style = "left: ${supportedPercent}%; width: ${naPercent}%"
+          }
+          span {
+            classes = setOf("feature-bar-label")
+            +it.name
+          }
+          if (it.experimental) {
+            span {
+              classes = setOf("feature-bar-experimental")
+              attributes["title"] = "This feature has not been merged in a specification draft yet"
+              +"🧪"
+            }
+          }
+          span {
+            classes = setOf("feature-bar-score")
+            +"${it.total} / $maxScore"
+          }
+        }
       }
-      +" but it still counts towards its global score."
-      br
-      +"In each bar, the features that are not applicable are displayed in a dimmed color."
     }
   }
 }
