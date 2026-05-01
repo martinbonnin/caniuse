@@ -125,7 +125,7 @@ internal fun generatePage(
             }
           }
           h4 {
-            a(href = "$pathPrefix/index.html#projects") {
+            a(href = "${pathPrefix}index.html#projects") {
               classes = setOf("sidebar-heading-link")
               +"Projects"
             }
