@@ -123,6 +123,31 @@ main {
 }
 a { color: var(--color-link); }
 
+/* Anchored headings */
+.anchor-heading {
+  position: relative;
+  scroll-margin-top: 1rem;
+}
+.heading-anchor {
+  position: absolute;
+  left: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-muted);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.heading-anchor svg {
+  display: block;
+}
+.anchor-heading:hover .heading-anchor,
+.heading-anchor:focus-visible {
+  opacity: 1;
+}
+
 /* Footnote */
 .footnote {
   color: var(--color-muted);

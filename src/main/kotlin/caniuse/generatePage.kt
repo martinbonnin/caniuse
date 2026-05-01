@@ -39,7 +39,7 @@ internal fun generatePage(
   title: String,
   features: Map<String, Feature>,
   projects: Map<String, Project>,
-  pathPrefix: String = "",
+  pathPrefix: String,
   content: MAIN.() -> Unit,
 ): String {
   return createHTML().html {
@@ -56,7 +56,7 @@ internal fun generatePage(
       header {
         div {
           id = "header-title"
-          a(href = "$pathPrefix/index.html") {
+          a(href = "${pathPrefix}index.html") {
             img(src = "${pathPrefix}logo.svg", alt = "Logo") {
               height = "30"
             }
@@ -105,29 +105,39 @@ internal fun generatePage(
         nav {
           id = "sidebar"
           h4 {
-            a(href = "$pathPrefix/index.html") {
+            a(href = "${pathPrefix}index.html") {
               classes = setOf("sidebar-heading-link")
               +"Home"
             }
           }
-          h4 { +"Features" }
-          ul {
-            features.entries.sortedBy { it.value.name }.forEach { (featureId, feature) ->
-              li {
-                a(href = "${pathPrefix}feature/$featureId.html") {
-                  classes = setOf("sidebar-link")
-                  +feature.name
-                }
-              }
+          h4 {
+            a(href = "$pathPrefix/index.html#projects") {
+              classes = setOf("sidebar-heading-link")
+              +"Projects"
             }
           }
-          h4 { +"Projects" }
           ul {
             projects.entries.sortedBy { it.value.name }.forEach { (projectId, project) ->
               li {
                 a(href = "${pathPrefix}project/$projectId.html") {
                   classes = setOf("sidebar-link")
                   +project.name
+                }
+              }
+            }
+          }
+          h4 {
+            a(href = "${pathPrefix}index.html#features") {
+              classes = setOf("sidebar-heading-link")
+              +"Features"
+            }
+          }
+          ul {
+            features.entries.sortedBy { it.value.name }.forEach { (featureId, feature) ->
+              li {
+                a(href = "${pathPrefix}feature/$featureId.html") {
+                  classes = setOf("sidebar-link")
+                  +feature.name
                 }
               }
             }
