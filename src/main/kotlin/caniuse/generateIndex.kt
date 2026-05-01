@@ -54,7 +54,7 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
             }
             th {
               attributes["data-sort"] = "number"
-              +"Unapplicable"
+              +"Not applicable"
             }
             th {
               attributes["data-sort"] = "number"
@@ -86,36 +86,53 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
     }
     div {
       h2 { anchored("features", "Features") }
-
-      val maxScore = projects.size
-      sortedFeatures(features, projects).forEach {
-        val supportedPercent = if (maxScore > 0) (it.supported * 100.0) / maxScore else 0.0
-        val naPercent = if (maxScore > 0) (it.na * 100.0) / maxScore else 0.0
-        a(href = "feature/${it.id}.html") {
-          classes = setOf("feature-bar")
-          attributes["title"] = "${it.supported} supported, ${it.na} not applicable"
-          div {
-            classes = setOf("feature-bar-fill")
-            style = "width: ${supportedPercent}%"
-          }
-          div {
-            classes = setOf("feature-bar-fill-na")
-            style = "left: ${supportedPercent}%; width: ${naPercent}%"
-          }
-          span {
-            classes = setOf("feature-bar-label")
-            +it.name
-          }
-          if (it.experimental) {
-            span {
-              classes = setOf("feature-bar-experimental")
-              attributes["title"] = "This feature has not been merged in a specification draft yet"
-              +"🧪"
+      table {
+        classes = setOf("support-table", "sortable-table")
+        thead {
+          tr {
+            th {
+              attributes["data-sort"] = "string"
+              +"Feature Name"
+            }
+            th {
+              attributes["data-sort"] = "string"
+              +"Experimental"
+            }
+            th {
+              attributes["data-sort"] = "number"
+              +"Not Applicable"
+            }
+            th {
+              attributes["data-sort"] = "number"
+              +"Unsupported"
+            }
+            th {
+              attributes["data-sort"] = "number"
+              attributes["data-sort-default"] = "desc"
+              +"Supported"
             }
           }
-          span {
-            classes = setOf("feature-bar-score")
-            +"${it.total} / $maxScore"
+        }
+        tbody {
+          sortedFeatures(features, projects).forEach {
+            tr {
+              td {
+                a(href = "feature/${it.id}.html") { +it.name }
+              }
+              td {
+                if (it.experimental) {
+                  span {
+                    attributes["title"] = "This feature has not been merged in a specification draft yet"
+                    +"🧪"
+                  }
+                }
+              }
+              td { +it.na.toString() }
+              td { +it.unsupported.toString() }
+              td {
+                +if (it.supported % 1.0 == 0.0) it.supported.toInt().toString() else it.supported.toString()
+              }
+            }
           }
         }
       }
@@ -185,11 +202,10 @@ private class DisplayFeature(
   val id: String,
   val name: String,
   val supported: Double,
+  val unsupported: Int,
   val na: Int,
-  val experimental: Boolean
-) {
-  val total = supported + na
-}
+  val experimental: Boolean,
+)
 
 private fun sortedProjects(features: Map<String, Feature>, projects: Map<String, Project>): List<DisplayProject> {
   return projects.entries.map { project ->
@@ -214,25 +230,16 @@ private fun sortedProjects(features: Map<String, Feature>, projects: Map<String,
 
 private fun sortedFeatures(features: Map<String, Feature>, projects: Map<String, Project>): List<DisplayFeature> {
   return features.entries.map { feature ->
+    val statuses = projects.values.map { it.features.get(feature.key).toSupportStatus() }
     DisplayFeature(
-      feature.key,
-      feature.value.name,
-      projects.values.sumOf {
-        it.features.get(feature.key).toSupportStatus().score()
-      },
-      projects.values.count {
-        it.features.get(feature.key).toSupportStatus() is NotApplicable
-      },
-      feature.value.experimental
+      id = feature.key,
+      name = feature.value.name,
+      supported = statuses.sumOf { it.score() },
+      unsupported = statuses.count { it is NotSupported || it is Unknown },
+      na = statuses.count { it is NotApplicable },
+      experimental = feature.value.experimental,
     )
   }.sortedWith(
-    compareBy<DisplayFeature> {
-      it.total
-    }.thenBy {
-      it.supported
-    }.reversed()
-      .thenBy {
-        it.name
-      }
+    compareByDescending<DisplayFeature> { it.supported }.thenBy { it.name }
   )
 }
