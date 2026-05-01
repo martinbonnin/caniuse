@@ -119,14 +119,7 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
               td {
                 a(href = "feature/${it.id}.html") { +it.name }
               }
-              td {
-                if (it.experimental) {
-                  span {
-                    attributes["title"] = "This feature has not been merged in a specification draft yet"
-                    +"🧪"
-                  }
-                }
-              }
+              td { +if (it.experimental) "yes" else "no" }
               td { +it.na.toString() }
               td { +it.unsupported.toString() }
               td {
