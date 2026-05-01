@@ -7,7 +7,7 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
     div {
       h1 { +"Can I use ... in GraphQL ?" }
       p {
-        +"A directory of GraphQL features, both drafted and experimental, and the state of their support across different projects."
+        +"A directory of newer GraphQL features, both drafted and experimental, and the state of their support across different projects."
       }
       p {
         +"The data for this website is open source ("
@@ -36,11 +36,8 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
       p {
         +"Most of the friction points have identified solutions in the form of RFCs. Some of them have made it to the spec (`@oneOf`, schema coordinates, ...). Others remain in experimental state. "
         +"As time passes, it's becoming harder and harder to tell what feature is implemented where. This website bridges that "
-        a(href = "https://github.com/graphql/gaps/") { +"gap" }
+        a(href = "https://github.com/graphql/gaps/") { +"GAP" }
         +"."
-      }
-      p {
-        +"Let's move the GraphQL ecosystem together!"
       }
     }
     div {
