@@ -40,28 +40,46 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
     }
     div {
       h2 { anchored("projects", "Projects") }
-      val maxFeatures = features.size
-      sortedProjects(features, projects).forEach {
-        val supportedPercent = if (maxFeatures > 0) (it.supported * 100.0) / maxFeatures else 0.0
-        val naPercent = if (maxFeatures > 0) (it.na * 100.0) / maxFeatures else 0.0
-        a(href = "project/${it.id}.html") {
-          classes = setOf("project-bar")
-          attributes["title"] = "${it.supported} supported, ${it.na} not applicable"
-          div {
-            classes = setOf("project-bar-fill")
-            style = "width: ${supportedPercent}%"
+      table {
+        classes = setOf("support-table", "sortable-table")
+        thead {
+          tr {
+            th {
+              attributes["data-sort"] = "string"
+              +"Project Name"
+            }
+            th {
+              attributes["data-sort"] = "string"
+              +"Type"
+            }
+            th {
+              attributes["data-sort"] = "number"
+              +"Unapplicable"
+            }
+            th {
+              attributes["data-sort"] = "number"
+              attributes["data-sort-default"] = "asc"
+              +"Unsupported"
+            }
+            th {
+              attributes["data-sort"] = "number"
+              +"Supported"
+            }
           }
-          div {
-            classes = setOf("project-bar-fill-na")
-            style = "left: ${supportedPercent}%; width: ${naPercent}%"
-          }
-          span {
-            classes = setOf("project-bar-label")
-            +it.name
-          }
-          span {
-            classes = setOf("project-bar-score")
-            +"${it.total} / $maxFeatures"
+        }
+        tbody {
+          sortedProjects(features, projects).forEach {
+            tr {
+              td {
+                a(href = "project/${it.id}.html") { +it.name }
+              }
+              td { +it.type }
+              td { +it.na.toString() }
+              td { +it.unsupported.toString() }
+              td {
+                +if (it.supported % 1.0 == 0.0) it.supported.toInt().toString() else it.supported.toString()
+              }
+            }
           }
         }
       }
@@ -102,17 +120,66 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
         }
       }
     }
+    script {
+      unsafe {
+        +"""
+          (function() {
+            document.querySelectorAll('table.sortable-table').forEach(function(table) {
+              var headers = Array.from(table.querySelectorAll('thead th[data-sort]'));
+              var tbody = table.querySelector('tbody');
+              if (!tbody) return;
+
+              function sortBy(header, direction) {
+                var idx = headers.indexOf(header);
+                var type = header.getAttribute('data-sort');
+                var rows = Array.from(tbody.querySelectorAll('tr'));
+                rows.sort(function(a, b) {
+                  var av = a.children[idx].textContent.trim();
+                  var bv = b.children[idx].textContent.trim();
+                  if (type === 'number') {
+                    av = parseFloat(av); bv = parseFloat(bv);
+                    if (isNaN(av)) av = 0;
+                    if (isNaN(bv)) bv = 0;
+                  } else {
+                    av = av.toLowerCase(); bv = bv.toLowerCase();
+                  }
+                  if (av < bv) return direction === 'asc' ? -1 : 1;
+                  if (av > bv) return direction === 'asc' ? 1 : -1;
+                  return 0;
+                });
+                rows.forEach(function(r) { tbody.appendChild(r); });
+                headers.forEach(function(h) { h.removeAttribute('aria-sort'); });
+                header.setAttribute('aria-sort', direction === 'asc' ? 'ascending' : 'descending');
+              }
+
+              headers.forEach(function(h) {
+                h.addEventListener('click', function() {
+                  var current = h.getAttribute('aria-sort');
+                  var direction = current === 'ascending' ? 'desc' : 'asc';
+                  sortBy(h, direction);
+                });
+              });
+
+              var defaultHeader = headers.find(function(h) { return h.hasAttribute('data-sort-default'); });
+              if (defaultHeader) {
+                defaultHeader.setAttribute('aria-sort', defaultHeader.getAttribute('data-sort-default') === 'desc' ? 'descending' : 'ascending');
+              }
+            });
+          })();
+        """.trimIndent()
+      }
+    }
   }
 }
 
 private class DisplayProject(
   val id: String,
   val name: String,
+  val type: String,
   val supported: Double,
-  val na: Int
-) {
-  val total = supported + na
-}
+  val unsupported: Int,
+  val na: Int,
+)
 
 private class DisplayFeature(
   val id: String,
@@ -126,28 +193,22 @@ private class DisplayFeature(
 
 private fun sortedProjects(features: Map<String, Feature>, projects: Map<String, Project>): List<DisplayProject> {
   return projects.entries.map { project ->
-    DisplayProject(
-      project.key,
-      project.value.name,
-      project.value.features.entries.sumOf {
-        if (!features.keys.contains(it.key)) {
-          error("Unkown feature ${it.key} in project ${project.key}, please double check ${project.key}.json")
-        }
-        it.value?.toSupportStatus().score()
-      },
-      project.value.features.count {
-        it.value?.toSupportStatus() is NotApplicable
+    project.value.features.keys.forEach {
+      if (!features.keys.contains(it)) {
+        error("Unkown feature $it in project ${project.key}, please double check ${project.key}.json")
       }
+    }
+    val statuses = project.value.features.values.map { it.toSupportStatus() }
+    DisplayProject(
+      id = project.key,
+      name = project.value.name,
+      type = project.value.type,
+      supported = statuses.sumOf { it.score() },
+      unsupported = statuses.count { it is NotSupported || it is Unknown },
+      na = statuses.count { it is NotApplicable },
     )
   }.sortedWith(
-    compareBy<DisplayProject> {
-      it.total
-    }.thenBy {
-      it.supported
-    }.reversed()
-      .thenBy {
-      it.name
-    }
+    compareBy<DisplayProject> { it.unsupported }.thenBy { it.name }
   )
 }
 

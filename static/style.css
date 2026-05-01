@@ -191,11 +191,25 @@ h1 + .tag-experimental {
   color: var(--color-muted);
   background: #EDFAD1;
 }
-.support-table tbody td:first-child {
+.support-table tbody td {
   background: var(--color-bg);
 }
-.support-table tbody td:last-child {
-  background: var(--color-bg);
+.sortable-table th[data-sort] {
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+.sortable-table th[data-sort]::after {
+  content: ' ↕';
+  opacity: 0.35;
+}
+.sortable-table th[aria-sort="ascending"]::after {
+  content: ' ↑';
+  opacity: 1;
+}
+.sortable-table th[aria-sort="descending"]::after {
+  content: ' ↓';
+  opacity: 1;
 }
 .support-table td.support-yes,
 .support-table td.support-no,
