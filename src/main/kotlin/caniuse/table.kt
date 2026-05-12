@@ -3,6 +3,7 @@ package caniuse
 import kotlinx.html.FlowContent
 import kotlinx.html.a
 import kotlinx.html.classes
+import kotlinx.html.span
 import kotlinx.html.table
 import kotlinx.html.tbody
 import kotlinx.html.td
@@ -31,6 +32,13 @@ internal fun FlowContent.appendTable(columnName: String, entries: List<SupportEn
           td {
             a(href = it.link) {
               +it.name
+            }
+            if (it.experimental) {
+              span {
+                classes = setOf("badge-experimental")
+                attributes["title"] = "This feature has not been merged in a specification draft yet"
+                +"E"
+              }
             }
           }
           td {

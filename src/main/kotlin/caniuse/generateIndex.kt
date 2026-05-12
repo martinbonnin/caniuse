@@ -95,10 +95,6 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
               +"Feature Name"
             }
             th {
-              attributes["data-sort"] = "string"
-              +"Experimental"
-            }
-            th {
               attributes["data-sort"] = "number"
               +"Not Applicable"
             }
@@ -118,8 +114,14 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
             tr {
               td {
                 a(href = "feature/${it.id}.html") { +it.name }
+                if (it.experimental) {
+                  span {
+                    classes = setOf("badge-experimental")
+                    attributes["title"] = "This feature has not been merged in a specification draft yet"
+                    +"E"
+                  }
+                }
               }
-              td { +if (it.experimental) "yes" else "no" }
               td { +it.na.toString() }
               td { +it.unsupported.toString() }
               td {

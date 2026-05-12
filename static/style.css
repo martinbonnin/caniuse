@@ -175,6 +175,27 @@ h1 + .tag-experimental {
   background: #e535ab;
   cursor: help;
 }
+.badge-experimental {
+  display: inline-block;
+  min-width: 1.2em;
+  padding: 0.05em 0.35em;
+  margin-left: 0.4em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  background: #e535ab;
+  border-radius: 2px;
+  cursor: help;
+  vertical-align: middle;
+  text-decoration: none;
+}
+h1 > .badge-experimental {
+  font-size: 1rem;
+  vertical-align: middle;
+  position: relative;
+  top: -0.2em;
+}
 
 /* Support table */
 .support-table {
