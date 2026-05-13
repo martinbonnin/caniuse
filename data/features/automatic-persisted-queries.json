@@ -1,0 +1,6 @@
+{
+  "name": "Automatic Persisted Queries",
+  "description": "Automatic Persisted Queries are Persisted Documents that do not need prior registration. If the server doesn't know about a document, it asks the client to send it. The client needs to embed the documents in its bundle. But the document can be cached for follow up requests.",
+  "url": "https://www.apollographql.com/docs/apollo-server/performance/apq",
+  "experimental": true
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Deprecated input values",
+  "description": "Allow marking input values as deprecated.",
+  "url": "https://github.com/graphql/graphql-spec/issues/197",
+  "experimental": false
+}

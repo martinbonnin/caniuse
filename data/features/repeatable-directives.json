@@ -1,0 +1,6 @@
+{
+  "name": " Repeatable Directives",
+  "description": "Allow directives to be repeated. Added in the October 2021 edition.",
+  "url": "https://github.com/graphql/graphql-spec/pull/472",
+  "experimental": false
+}

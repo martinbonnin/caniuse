@@ -1,0 +1,6 @@
+{
+  "name": "Interfaces on Interfaces",
+  "description": "Allow interfaces to implement other interfaces. Added in the October 2021 edition.",
+  "url": "https://github.com/graphql/graphql-spec/pull/373",
+  "experimental": false
+}
