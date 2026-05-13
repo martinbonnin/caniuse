@@ -20,8 +20,8 @@
       "since": "?"
     },
     "graphql-response+json": {
-      "since": "-",
-      "note": "[issue](https://github.com/graphql/graphiql/issues/4189)"
+      "since": "5.2.3",
+      "note": "[pr](github.com/graphql/graphiql/pull/4199)"
     },
     "on-error": {
       "since": "?"
