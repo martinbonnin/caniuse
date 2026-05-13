@@ -5,47 +5,60 @@
   "url": "https://github.com/FormidableLabs/urql",
   "features": {
     "capabilities": {
-      "since": "?"
+      "since": "n/a",
+      "note": "There is no built-in service-capabilities discovery/configuration in urql."
     },
     "deprecated-objects": {
-      "since": "?"
+      "since": "n/a",
+      "note": "urql is not schema-aware and does not warn or typecheck deprecated object usage."
     },
     "directives-on-directives": {
-      "since": "?"
+      "since": "n/a",
+      "note": "This is SDL syntax and does not apply to urql's executable operation handling."
     },
     "executable-documents-descriptions": {
-      "since": "?"
+      "since": "4.0.0 (partial)",
+      "note": "Since 4.0.0, urql relies on [`@0no-co/graphql.web`](https://github.com/0no-co/graphql.web), which supports executable definitions descriptions starting with 1.2.0 ([changelog](https://github.com/0no-co/graphql.web/blob/main/CHANGELOG.md#120)). Older urql versions depend on the installed `graphql` peer version."
     },
     "fragment-arguments": {
-      "since": "?"
+      "since": "-",
+      "note": "Not supported by urql's built-in parser."
     },
     "graphql-response+json": {
       "since": "3.2.0",
       "note": "[pr](https://github.com/urql-graphql/urql/pull/3007)"
     },
     "on-error": {
-      "since": "?"
+      "since": "-",
+      "note": "The built-in fetch request body does not include the GraphQL `onError` request parameter."
     },
     "one-of": {
-      "since": "?"
+      "since": "n/a",
+      "note": "urql does not perform schema validation or generate input object types; OneOf variables are sent as regular GraphQL variables."
     },
     "semantic-introspection": {
-      "since": "?"
+      "since": "n/a",
+      "note": "Not applicable to urql's client runtime."
     },
     "semantic-non-null": {
-      "since": "?"
+      "since": "n/a",
+      "note": "urql does not perform schema-based type generation or nullability analysis."
     },
     "defer": {
-      "since": "?"
+      "since": "2.3.0",
+      "note": "Experimental multipart incremental delivery support for `@defer` and `@stream` was added in 2.3.0 ([pr](https://github.com/FormidableLabs/urql/pull/1854)). The protocol was later updated in 3.2.0 ([pr](https://github.com/urql-graphql/urql/pull/3007)) and 4.1.4 ([pr](https://github.com/urql-graphql/urql/pull/3389))."
     },
     "stream": {
-      "since": "?"
+      "since": "2.3.0",
+      "note": "Experimental multipart incremental delivery support for `@defer` and `@stream` was added in 2.3.0 ([pr](https://github.com/FormidableLabs/urql/pull/1854)). The protocol was later updated in 3.2.0 ([pr](https://github.com/urql-graphql/urql/pull/3007)) and 4.1.4 ([pr](https://github.com/urql-graphql/urql/pull/3389))."
     },
     "field-extensions": {
-      "since": "?"
+      "since": "n/a",
+      "note": "This is SDL syntax and does not apply to urql's executable operation handling."
     },
     "http-batching": {
-      "since": "?"
+      "since": "-",
+      "note": "Explicitly unsupported by the built-in fetch implementation ([source](https://github.com/urql-graphql/urql/blob/main/packages/core/src/internal/fetchSource.ts#L21-L24))."
     }
   }
 }
