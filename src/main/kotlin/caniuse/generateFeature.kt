@@ -10,7 +10,10 @@ fun generateFeature(id: String, feature: Feature, features: Map<String, Feature>
       if (feature.experimental) {
         span {
           classes = setOf("badge-experimental")
-          attributes["title"] = "This feature has not been merged in a specification draft yet"
+          attributes["data-tooltip"] = "This feature has not been merged in a specification draft yet"
+          attributes["tabindex"] = "0"
+          attributes["role"] = "button"
+          attributes["aria-label"] = "Experimental: This feature has not been merged in a specification draft yet"
           +"EXPERIMENTAL"
         }
       }
