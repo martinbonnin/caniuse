@@ -5,47 +5,53 @@
   "url": "https://github.com/0no-co/gql.tada",
   "features": {
     "capabilities": {
-      "since": "?"
+      "since": "-"
     },
     "deprecated-objects": {
-      "since": "?"
+      "since": "-"
     },
     "directives-on-directives": {
-      "since": "?"
+      "since": "-"
     },
     "executable-documents-descriptions": {
-      "since": "?"
+      "since": "1.9.0",
+      "note": "[pr](https://github.com/0no-co/gql.tada/pull/479)"
     },
     "fragment-arguments": {
-      "since": "?"
+      "since": "-"
     },
     "graphql-response+json": {
       "since": "n/a",
-      "note": "gql.tada is transport agnostic"
+      "note": "gql.tada is transport agnostic."
     },
     "on-error": {
-      "since": "?"
+      "since": "-"
     },
     "one-of": {
-      "since": "?"
+      "since": "1.7.0",
+      "note": "[pr](https://github.com/0no-co/gql.tada/pull/284)"
     },
     "semantic-introspection": {
-      "since": "?"
+      "since": "-"
     },
     "semantic-non-null": {
-      "since": "?"
+      "since": "-",
+      "note": "gql.tada supports its own client-controlled nullability directives (`@_required` and `@_optional`) since 1.1.0, but not semantic non-null."
     },
     "defer": {
-      "since": "?"
+      "since": "1.0.0 (partial)",
+      "note": "gql.tada is transport agnostic, but types deferred fragment spreads as optional. Related fixes shipped in 1.8.0 and 1.8.3."
     },
     "stream": {
-      "since": "?"
+      "since": "n/a",
+      "note": "gql.tada is transport agnostic; `@stream` delivery is handled by the client/server transport."
     },
     "field-extensions": {
-      "since": "?"
+      "since": "-"
     },
     "http-batching": {
-      "since": "?"
+      "since": "n/a",
+      "note": "gql.tada is transport agnostic."
     }
   }
 }
