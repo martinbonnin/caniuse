@@ -65,6 +65,7 @@ internal fun generatePage(
       link(rel = "stylesheet", href = "${pathPrefix}style.css")
       script(src = "${pathPrefix}pagefind/pagefind-ui.js", type = "text/javascript") {}
       script(src = "${pathPrefix}theme.js") {}
+      script(src = "${pathPrefix}tooltip.js") {}
     }
     body {
       header {

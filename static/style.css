@@ -191,12 +191,9 @@ h1 + .tag-experimental {
   text-decoration: none;
   position: relative;
 }
-.badge-experimental::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% + 6px);
-  transform: translateX(-50%);
+.tooltip {
+  position: fixed;
+  display: none;
   background: #333;
   color: #fff;
   padding: 0.4em 0.6em;
@@ -205,24 +202,11 @@ h1 + .tag-experimental {
   font-weight: 400;
   letter-spacing: normal;
   text-transform: none;
-  white-space: nowrap;
-  max-width: 90vw;
+  line-height: 1.4;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.15s;
-  z-index: 10;
-}
-.badge-experimental:hover::after,
-.badge-experimental:focus::after,
-.badge-experimental:focus-visible::after {
-  opacity: 1;
-}
-@media (max-width: 480px) {
-  .badge-experimental::after {
-    white-space: normal;
-    width: max-content;
-    max-width: 80vw;
-  }
+  z-index: 100;
 }
 h1 > .badge-experimental {
   font-size: 1rem;
