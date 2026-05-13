@@ -46,6 +46,46 @@
     },
     "http-batching": {
       "since": "?"
+    },
+    "automatic-persisted-queries": {
+      "since": "-",
+      "note": ""
+    },
+    "deprecated-input-values": {
+      "since": "",
+      "note": ""
+    },
+    "directives-on-variable-definitions": {
+      "since": "",
+      "note": ""
+    },
+    "interfaces-on-interfaces": {
+      "since": "",
+      "note": ""
+    },
+    "mutations": {
+      "since": "",
+      "note": ""
+    },
+    "persisted-documents": {
+      "since": "-",
+      "note": ""
+    },
+    "queries": {
+      "since": "",
+      "note": ""
+    },
+    "repeatable-directives": {
+      "since": "",
+      "note": ""
+    },
+    "specified-by": {
+      "since": "",
+      "note": ""
+    },
+    "subscriptions": {
+      "since": "",
+      "note": ""
     }
   }
 }
