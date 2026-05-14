@@ -55,7 +55,7 @@
   }
 
   function attach() {
-    document.querySelectorAll(".badge-experimental[data-tooltip]").forEach((badge) => {
+    document.querySelectorAll(".badge-tag[data-tooltip]").forEach((badge) => {
       badge.addEventListener("mouseenter", () => show(badge));
       badge.addEventListener("mouseleave", () => hide(badge));
       badge.addEventListener("focus", () => show(badge));

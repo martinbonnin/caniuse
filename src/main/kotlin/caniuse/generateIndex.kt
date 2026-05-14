@@ -41,30 +41,14 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
     div {
       h2 { anchored("projects", "Projects") }
       table {
-        classes = setOf("support-table", "sortable-table")
+        classes = setOf("support-table")
         thead {
           tr {
-            th {
-              attributes["data-sort"] = "string"
-              +"Project Name"
-            }
-            th {
-              attributes["data-sort"] = "string"
-              +"Type"
-            }
-            th {
-              attributes["data-sort"] = "number"
-              +"Not applicable"
-            }
-            th {
-              attributes["data-sort"] = "number"
-              attributes["data-sort-default"] = "asc"
-              +"Unsupported"
-            }
-            th {
-              attributes["data-sort"] = "number"
-              +"Supported"
-            }
+            th { +"Project Name" }
+            th { +"Type" }
+            th { +"Not applicable" }
+            th { +"Unsupported" }
+            th { +"Supported" }
           }
         }
         tbody {
@@ -91,8 +75,8 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
         thead {
           tr {
             th {
-              attributes["data-sort"] = "string"
-              +"Feature Name"
+              attributes["data-sort"] = "number"
+              +"Feature"
             }
             th {
               attributes["data-sort"] = "number"
@@ -104,7 +88,6 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
             }
             th {
               attributes["data-sort"] = "number"
-              attributes["data-sort-default"] = "desc"
               +"Supported"
             }
           }
@@ -113,17 +96,9 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
           sortedFeatures(features, projects).forEach {
             tr {
               td {
+                attributes["data-sort-key"] = tagRank(it.tags).toString()
                 a(href = "feature/${it.id}.html") { +it.name }
-                if (it.experimental) {
-                  span {
-                    classes = setOf("badge-experimental")
-                    attributes["data-tooltip"] = "This feature has not been merged in a specification draft yet"
-                    attributes["tabindex"] = "0"
-                    attributes["role"] = "button"
-                    attributes["aria-label"] = "Experimental: This feature has not been merged in a specification draft yet"
-                    +"E"
-                  }
-                }
+                it.tags.forEach { tag -> featureTagBadge(tag) }
               }
               td { +it.na.toString() }
               td { +it.unsupported.toString() }
@@ -149,8 +124,11 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
                 var type = header.getAttribute('data-sort');
                 var rows = Array.from(tbody.querySelectorAll('tr'));
                 rows.sort(function(a, b) {
-                  var av = a.children[idx].textContent.trim();
-                  var bv = b.children[idx].textContent.trim();
+                  var ac = a.children[idx], bc = b.children[idx];
+                  var ak = ac.getAttribute('data-sort-key');
+                  var bk = bc.getAttribute('data-sort-key');
+                  var av = ak !== null ? ak : ac.textContent.trim();
+                  var bv = bk !== null ? bk : bc.textContent.trim();
                   if (type === 'number') {
                     av = parseFloat(av); bv = parseFloat(bv);
                     if (isNaN(av)) av = 0;
@@ -174,11 +152,6 @@ fun generateIndex(projects: Map<String, Project>, features: Map<String, Feature>
                   sortBy(h, direction);
                 });
               });
-
-              var defaultHeader = headers.find(function(h) { return h.hasAttribute('data-sort-default'); });
-              if (defaultHeader) {
-                defaultHeader.setAttribute('aria-sort', defaultHeader.getAttribute('data-sort-default') === 'desc' ? 'descending' : 'ascending');
-              }
             });
           })();
         """.trimIndent()
@@ -202,7 +175,7 @@ private class DisplayFeature(
   val supported: Double,
   val unsupported: Int,
   val na: Int,
-  val experimental: Boolean,
+  val tags: List<String>,
 )
 
 private fun sortedProjects(features: Map<String, Feature>, projects: Map<String, Project>): List<DisplayProject> {
@@ -221,9 +194,7 @@ private fun sortedProjects(features: Map<String, Feature>, projects: Map<String,
       unsupported = statuses.count { it is NotSupported || it is Unknown },
       na = statuses.count { it is NotApplicable },
     )
-  }.sortedWith(
-    compareBy<DisplayProject> { it.unsupported }.thenBy { it.name }
-  )
+  }.sortedBy { it.name }
 }
 
 private fun sortedFeatures(features: Map<String, Feature>, projects: Map<String, Project>): List<DisplayFeature> {
@@ -235,9 +206,9 @@ private fun sortedFeatures(features: Map<String, Feature>, projects: Map<String,
       supported = statuses.sumOf { it.score() },
       unsupported = statuses.count { it is NotSupported || it is Unknown },
       na = statuses.count { it is NotApplicable },
-      experimental = feature.value.experimental,
+      tags = feature.value.tags,
     )
   }.sortedWith(
-    compareByDescending<DisplayFeature> { it.supported }.thenBy { it.name }
+    compareBy<DisplayFeature> { tagRank(it.tags) }.thenBy { it.name }
   )
 }

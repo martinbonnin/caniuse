@@ -2,5 +2,5 @@
   "name": "Persisted Documents",
   "description": "A Persisted Document is a document that is cached on the server side, along with its unique identifier. Clients can send this identifier instead of the corresponding query string, thus reducing request sizes dramatically. In particular, this allows:\n\n* Reducing network traffic.\n* Smaller bundle size.\n* Validating documents only once.\n* Easier caching using HTTP GET.",
   "url": "https://spec.graphql.org/draft/#sec-Query",
-  "experimental": true
+  "tags": ["Experimental"]
 }

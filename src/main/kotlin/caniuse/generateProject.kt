@@ -18,6 +18,6 @@ internal fun generateProject(id: String, project: Project, features: Map<String,
       a(href = project.url) { +project.url }
     }
     h2 { +"Features" }
-    appendTable("Feature Name", featureEntries(id, project, features))
+    appendTable("Feature", featureEntries(id, project, features))
   }
 }

@@ -6,7 +6,7 @@ internal class SupportEntry(
   val label: String,
   val note: Markdown?,
   val status: SupportStatus,
-  val experimental: Boolean = false,
+  val tags: List<String> = emptyList(),
 )
 
 sealed interface SupportStatus
@@ -16,15 +16,21 @@ object NotApplicable : SupportStatus
 object Unknown : SupportStatus
 object NotSupported : SupportStatus
 
+private val featureTagOrder = listOf("Jul 2015", "Jun 2018", "Oct 2021", "Sep 2025", "draft", "RFC2", "RFC1", "RFC0")
+
+internal fun tagRank(tags: List<String>): Int {
+  return tags.mapNotNull { featureTagOrder.indexOf(it).takeIf { idx -> idx >= 0 } }.minOrNull() ?: Int.MAX_VALUE
+}
+
 internal fun featureEntries(id: String, project: Project, features: Map<String, Feature>): List<SupportEntry> {
   return features.map { feature ->
-    project.features.get(feature.key).toSupportEntry(id, feature.value.name, "../feature/${feature.key}.html", feature.value.experimental)
-  }.sortedWith(compareBy<SupportEntry> { it.experimental }.thenBy { it.name })
+    project.features.get(feature.key).toSupportEntry(id, feature.value.name, "../feature/${feature.key}.html", feature.value.tags)
+  }.sortedWith(compareBy<SupportEntry> { tagRank(it.tags) }.thenBy { it.name })
 }
 
 internal fun projectEntries(id: String, projects: Map<String, Project>): List<SupportEntry> {
   return projects.map { project ->
-    project.value.features.get(id).toSupportEntry(id, project.value.name, "../project/${project.key}.html", false)
+    project.value.features.get(id).toSupportEntry(id, project.value.name, "../project/${project.key}.html", emptyList())
   }.sortedBy { it.name }
 }
 
@@ -48,7 +54,7 @@ internal fun SupportInfo?.toSupportStatus(): SupportStatus {
   }
 }
 
-private fun SupportInfo?.toSupportEntry(id: String, name: String, link: String, experimental: Boolean): SupportEntry {
+private fun SupportInfo?.toSupportEntry(id: String, name: String, link: String, tags: List<String>): SupportEntry {
   val status = toSupportStatus()
 
   val note = if (status is Unknown) {
@@ -71,7 +77,7 @@ private fun SupportInfo?.toSupportEntry(id: String, name: String, link: String, 
     label,
     note?.let { Markdown(it) },
     status,
-    experimental,
+    tags,
   )
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "Directives on Variable Definitions",
-  "description": "Allow to define directives on variable definitions. This was added in the October 2020 edition.",
+  "description": "Allow to define directives on variable definitions. This was added in the October 2021 edition.",
   "url": "https://github.com/graphql/graphql-spec/pull/510",
-  "experimental": false
+  "tags": ["Oct 2021"]
 }

@@ -2,5 +2,5 @@
   "name": "@specifiedBy",
   "description": "@specifiedBy is a built-in directive applied to custom scalar types that points to a URL describing the scalar's serialization, parsing, and value semantics. Added in the October 2021 edition.",
   "url": "https://github.com/graphql/graphql-spec/issues/635",
-  "experimental": false
+  "tags": ["Oct 2021"]
 }

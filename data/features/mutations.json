@@ -2,5 +2,5 @@
   "name": "Mutations",
   "description": "Mutations are used to modify data on the server.",
   "url": "https://spec.graphql.org/draft/#sec-Mutation",
-  "experimental": false
+  "tags": ["Jul 2015"]
 }

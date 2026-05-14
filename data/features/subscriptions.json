@@ -2,5 +2,5 @@
   "name": "Subscriptions",
   "description": "Subscriptions allow clients to receive real-time updates from a server.",
   "url": "https://spec.graphql.org/draft/#sec-Subscription",
-  "experimental": false
+  "tags": ["Jun 2018"]
 }

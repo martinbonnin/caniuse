@@ -2,5 +2,5 @@
   "name": "Queries",
   "description": "Queries are used to fetch data from a server.",
   "url": "https://spec.graphql.org/draft/#sec-Query",
-  "experimental": false
+  "tags": ["Jul 2015"]
 }

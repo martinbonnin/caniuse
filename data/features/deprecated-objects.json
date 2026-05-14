@@ -2,5 +2,5 @@
   "name": "Deprecated objects",
   "description": "Allows to deprecate objects",
   "url": "https://github.com/graphql/graphql-spec/pull/997",
-  "experimental": true
+  "tags": ["Experimental", "RFC1"]
 }
